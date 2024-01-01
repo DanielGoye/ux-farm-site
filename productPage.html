@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="images\favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Products</title>
+  </head>
+  <body>
+    <header>
+      <nav class="nav_header">
+        <!-- Logo -->
+        <img src="images\logo.png" alt="iriun_logo" />
+        <!-- Nav -->
+        <ul class="nav_links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Company</a></li>
+          <li><a href="#" class="active">Products</a></li>
+          <li><a href="#">Impact</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+        <!-- Login Button -->
+        <button class="login_button">Log in</button>
+      </nav>
+      <div class="dam-liner-card">
+        <h2>Solar <span>Pump</span></h2>
+        <p>
+          Solar pumps are ideal for pumping water from your shallow wells, water
+          pans or dams for either irrigation or domestic purposes. Our Solar
+          water pumps are high quality products designed for higher flow
+          drinking water supply, livestock watering, pond management and
+          irrigation applications.
+        </p>
+        <p>
+          Each system contains a pump, a pump motor and a controller. This
+          modular concept keeps all electronics above ground providing simple
+          servicing, ease of access and a low cost of ownership.
+        </p>
+      </div>
+    </header>
+    <main>
+      <section class="features_section">
+        <!-- Feature -->
+        <div class="feature">
+          <div class="features_border features_border_left">
+            <img src="images/features_1.png" alt="features_1" />
+          </div>
+          <div>
+            <h1>Features</h1>
+            <ul>
+              <li>Maximum head – 30m/100 feet</li>
+              <li>Maximum flow rate – 1000 liters per hour</li>
+              <li>Voltage – 24VDC</li>
+              <li>Can irrigate up to 2 acres</li>
+            </ul>
+          </div>
+        </div>
+        <!-- Feature -->
+        <div class="feature">
+          <div>
+            <h1>Benefits</h1>
+            <ul>
+              <li>Harvests enough water for domestic and agricultural use.</li>
+              <li>Reduces risks of floods</li>
+              <li>1mm gauge (Heavy gauge)</li>
+              <li>10 times cheaper than water tanks.</li>
+            </ul>
+          </div>
+          <div class="features_border features_border_right">
+            <img src="images/incentive.png" alt="features_1" />
+          </div>
+        </div>
+        <!-- Feature -->
+        <div class="feature">
+          <div class="features_border features_border_left">
+            <img src="images/box.png" alt="features_1" />
+          </div>
+          <div>
+            <h1>Whats Included</h1>
+            <ul>
+              <li>Customized according to your water pan size</li>
+            </ul>
+          </div>
+        </div>
+        <!-- Feature -->
+        <div class="feature">
+          <div>
+            <h1>Free Installation Services</h1>
+            <ul>
+              <li>Installation & Training</li>
+              <li>After sale Support</li>
+              <li>
+                Warranty period 1mm - 10 years, 0.75mm - 5 years, 0.5mm - 2
+                years
+              </li>
+              <li>Casuals to be provided by farmer</li>
+            </ul>
+          </div>
+          <div class="features_border features_border_right">
+            <img src="images/responsible.png" alt="features_1" />
+          </div>
+        </div>
+      </section>
+      <section class="prices_section">
+        <!-- Prices -->
+        <h2 class="section_heading">Our <span>Prices</span></h2>
+        <div class="pricing_table">
+          <div class="sizes pricing_table_section">
+            <span>Sizes</span>
+            <p>1mm</p>
+            <p>0.75mm</p>
+            <p>0.5mm</p>
+          </div>
+          <div class="prices pricing_table_section">
+            <span>Prices</span>
+            <p>395/- Per sqm</p>
+            <p>295/- Per sqm</p>
+            <p>195/- Per sqm</p>
+          </div>
+        </div>
+      </section>
+      <section class="request_visit">
+        <!-- Call to action -->
+        <h2 class="section_heading">
+          Starting Your Farming Journey The Climate Smart Way Has Never Been
+          Easier
+        </h2>
+        <p>Click the button below to get in touch with us</p>
+        <button class="green_button">Request a presite visit</button>
+      </section>
+      <section class="calculator">
+        <h1 style="text-align: center">Customize and Purchase Now</h1>
+        <div class="dam-liner-calculator" style="text-align: center">
+          <label for="surfaceType">Surface Type:</label>
+          <select id="surfaceType" class="form-control">
+            <option value="250">0.5mm - Very Smooth Surfaces</option>
+            <option value="350">0.75mm - Mixed Surfaces</option>
+            <option value="400">1mm - Rough Surfaces</option>
+          </select>
+
+          <label for="area">Area (sqm):</label>
+          <input type="number" id="area" class="form-control" />
+
+          <div class="cost-display">
+            <h3>Total Cost: KES <span id="totalCost">0</span>/=</h3>
+          </div>
+          <button
+            type="button"
+            class="btn btn-success btn-purchase"
+            data-toggle="modal"
+            data-target="#purchaseModal"
+          >
+            Purchase
+          </button>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <section class="footer_1">
+        <div class="footer_1_section footer_1_section1">
+          <img src="images/logo_colored.png" alt="" />
+          <div>
+            <p class="footer_heading">Get in touch</p>
+            <p class="footer_text">
+              Kilimani - Ndemi Road - <br />Next to Dima Driving School
+            </p>
+            <div class="footer_1_section1_phone">
+              <span class="footer_1_section1_phone_title">Phone:</span>
+              <div class="footer_1_section1_phonenumbers">
+                <span>+254 732 957 984 /</span>
+                <span>+254 112 148 880</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer_1_section footer_1_section2">
+          <ul>
+            <li>Company</li>
+            <li>Products</li>
+            <li>Impact</li>
+            <li>Contact Us</li>
+          </ul>
+          <ul>
+            <li>Climate Smart Drip Kits</li>
+            <li>Drip button systems</li>
+            <li>Dam Liners</li>
+            <li>Mulching technology</li>
+            <li>Greenhouses</li>
+          </ul>
+        </div>
+      </section>
+      <section class="footer_2">
+        <p>2023 &copy All rights reserved by <span>Irri-hub Ke</span></p>
+        <div>
+          <img src="images/Twitter_Circled.png" alt="" />
+          <img src="images/Instagram_Circle.png" alt="" />
+          <img src="images/Facebook.png" alt="" />
+        </div>
+      </section>
+    </footer>
+  </body>
+</html>

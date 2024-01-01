@@ -1,0 +1,642 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+/* Base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif; /* Replace with the specific font you're using */
+}
+
+/* Navigation bar styles */
+.nav_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 4rem 126px;
+}
+
+.nav_header img {
+  height: 95px;
+}
+
+.nav_links {
+  list-style: none;
+  display: flex;
+  margin: 0px 90px 0px 0px;
+}
+
+.nav_links li {
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  padding: 0 18px;
+}
+
+.nav_links li a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.nav_links .active {
+  color: #85c340;
+}
+
+.login_button {
+  border-radius: 30px;
+  background: #85c340;
+  width: 180px;
+  height: 55px;
+  flex-shrink: 0;
+  color: #fff;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  border: none;
+}
+
+/* Hero section styles */
+.hero {
+  position: relative;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("rectangle-1@2x.png") no-repeat center center/cover;
+  color: white;
+  text-align: center;
+  padding: 0px 20px 340px; /* Adjust padding as needed */
+  min-height: 100vh; /* Minimum height to fill the viewport */
+}
+
+.green-text {
+  color: #85c340; /* Adjust this color to the specific shade of green you want */
+}
+
+.hero h1 {
+  font-size: 3em; /* Larger font size for the main heading */
+  margin-bottom: 0.5em;
+  font-weight: bold;
+}
+
+.hero p {
+  margin-bottom: 1.5em;
+  font-size: 1.2em; /* Slightly larger font size for the subheading */
+}
+
+.cta-buttons button {
+  margin: 5px;
+  padding: 0.8em 4.5em;
+  background-color: #85c340; /* Replace with the color of your buttons */
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-weight: bold;
+  font-size: 1em;
+}
+
+.cta-buttons button:hover {
+  background-color: #3a9d56; /* Darker shade for hover effect */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .nav-links,
+  .login-btn {
+    display: none; /* Hide navigation links and login button on smaller screens */
+  }
+
+  .hero {
+    padding: 120px 20px;
+  }
+
+  .hero h1 {
+    font-size: 2.5em;
+  }
+
+  .hero p {
+    font-size: 1em;
+  }
+
+  .cta-buttons button {
+    width: auto; /* Allow buttons to resize with padding */
+    font-size: 0.9em;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 2em;
+  }
+
+  .hero p {
+    font-size: 0.8em;
+  }
+}
+.what-we-do {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 100px;
+  background: #f3f9ec; /* White background */
+}
+
+.what-we-do .content {
+  max-width: 50%; /* Adjust based on actual layout requirements */
+}
+
+.what-we-do h2 {
+  font-size: 2.5em;
+  color: #000; /* Black color text */
+  margin-bottom: 0.5em;
+}
+
+.what-we-do h3 {
+  font-size: 2em;
+  color: #000;
+  margin-bottom: 1em;
+}
+
+.what-we-do p {
+  color: #666; /* Dark gray color text */
+  margin-bottom: 2em;
+}
+
+.learn-more-btn {
+  padding: 0.8em 3em; /* Smaller than hero buttons */
+  background-color: #85c340; /* Same green color for consistency */
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* Responsive design adjustments for this section */
+@media (max-width: 768px) {
+  .what-we-do {
+    flex-direction: column;
+    padding: 50px 20px;
+  }
+
+  .what-we-do .content {
+    max-width: 100%;
+  }
+}
+
+/* Services Section styles */
+.services {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 20px;
+  background: #fff; /* White background */
+}
+
+.partners {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px; /* Space between logos */
+  margin-bottom: 40px; /* Space below logos */
+}
+
+.partner-logo {
+  filter: grayscale(100%); /* Ensure logos are in grayscale */
+  max-width: 100px; /* Adjust based on actual logo sizes */
+  height: auto;
+}
+
+.services-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.illustration,
+.text-content {
+  flex-basis: 50%; /* Assigns equal width to both the illustration and text content */
+}
+
+.illustration img {
+  width: 100%;
+  display: block; /* Removes any default margins or padding */
+}
+
+.text-content h2 {
+  font-size: 1.8em; /* Adjust according to your design */
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.text-content .highlight {
+  color: #44c767; /* The green color for highlighted text */
+}
+
+.text-content p {
+  font-size: 1em; /* Adjust according to your design */
+  color: #666;
+}
+
+/* Adjusting the responsive behavior */
+@media (max-width: 992px) {
+  .services-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .illustration,
+  .text-content {
+    flex-basis: 100%; /* Stack them on smaller screens */
+  }
+
+  .illustration img {
+    max-width: 80%; /* Adjust image max width for smaller screens */
+    margin: 0 auto; /* Center the image */
+  }
+
+  .text-content {
+    order: 2; /* Text content comes after the illustration */
+  }
+}
+
+/* Additional styles for the partners section */
+.partners img {
+  max-height: 50px; /* Control the height of the partner logos */
+  margin: 0 10px; /* Horizontal margin between logos */
+  opacity: 0.6; /* Tone down the logos to not compete with the main content */
+  transition: opacity 0.3s;
+}
+
+.partners img:hover {
+  opacity: 1; /* Full opacity on hover */
+}
+.gallery {
+  text-align: center;
+  padding: 20px;
+  background-color: #f0f0f0; /* Adjust the background color as necessary */
+}
+
+.gallery h2 {
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two columns for the first row */
+  grid-gap: 10px; /* Space between images */
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: auto;
+  object-fit: cover; /* This will cover the area of the grid item, cropping the image if necessary */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .gallery-grid {
+    grid-template-columns: repeat(
+      2,
+      1fr
+    ); /* Adjust the number of columns for smaller screens if needed */
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-grid {
+    grid-template-columns: 1fr; /* Single column layout for very small screens */
+  }
+}
+/* Testimonials Section styles */
+.testimonials {
+  background: url("https://res.cloudinary.com/prometheusapi/image/upload/v1703852502/public/vector_2x_bh2cwb.png")
+    no-repeat center; /* path to your stylized shape image */
+  background-size: contain; /* adjust size as needed */
+  text-align: center;
+  background-color: #f8f8f8; /* or any other background color */
+  padding: 2em 0;
+}
+
+.testimonials-header h2 {
+  font-size: 2em;
+  color: #333;
+}
+
+.testimonials-header p {
+  color: #666;
+}
+
+.testimonial-card {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2em;
+}
+
+.testimonial-quote p {
+  font-style: italic;
+  color: #333;
+  max-width: 300px; /* Adjust width as needed */
+}
+
+.dot {
+  height: 10px;
+  width: 10px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0 5px;
+}
+
+.dot.active {
+  background-color: #85c340; /* Active dot color */
+}
+/*Web responsive version*/
+/* Adjusting the responsive behavior */
+@media (max-width: 768px) {
+  .testimonial-card {
+    max-width: 100%; /* Allow the card to expand to the full width */
+  }
+}
+
+/* Further adjustments for very small screens */
+@media (max-width: 480px) {
+  .testimonial-card {
+    padding: 1em; /* Reduce padding on very small screens */
+  }
+}
+
+.testimonial-quote p {
+  font-style: italic;
+  color: #333;
+  /* You can set a max-width here if necessary, or remove it to allow the text to fill the container */
+  max-width: 100%;
+}
+
+/* Adjusting the responsive behavior for smaller screens */
+@media (max-width: 768px) {
+  .testimonial-quote p {
+    font-size: 1em; /* Smaller font size for readability on small devices */
+    padding: 0 10px; /* Padding to ensure text doesn't touch the edges */
+  }
+}
+
+/* Further adjustments for very small screens */
+@media (max-width: 480px) {
+  .testimonial-quote p {
+    font-size: 0.9em; /* Even smaller font size if necessary */
+    padding: 0 5px; /* Adjust padding as needed */
+  }
+}
+
+.gallery {
+  text-align: center;
+  padding: 80px 110px;
+  background-color: #f0f0f0;
+}
+
+.gallery h2 {
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Creates a 4-column grid */
+  grid-auto-rows: minmax(100px, auto); /* Sets a minimum row height */
+  gap: 25px;
+}
+
+.gallery-item {
+  overflow: hidden; /* Ensures the content does not spill outside the boundary */
+}
+
+.gallery-item.large {
+  grid-column: span 2; /* Makes the first item span two columns */
+  grid-row: span 2; /* Makes the first item span two rows */
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the images cover their containers */
+  border-radius: 20px;
+}
+
+@media (max-width: 768px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr); /* Adjust to a 2-column grid */
+  }
+
+  .gallery-item.large {
+    grid-column: span 2; /* Maintain spanning in the smaller grid */
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-grid {
+    grid-template-columns: 1fr; /* Single column grid */
+  }
+
+  .gallery-item.large {
+    grid-column: span 1; /* No spanning in a single column layout */
+  }
+}
+.contact-container {
+  display: flex;
+  justify-content: space-between; /* Aligns children side by side */
+  align-items: stretch; /* Stretches children to fill the height */
+  background-size: cover;
+  padding: 128px 145px;
+  gap: 0; /* Removes any gap between children */
+  background-image: url("https://res.cloudinary.com/prometheusapi/image/upload/v1703876537/public/37944_1_kzch9t.png");
+}
+
+.contact-info {
+  background: linear-gradient(222deg, #85c340 0%, #0071ba 100%);
+  color: white;
+  padding: 280px 80px 80px 62px;
+  border-top-left-radius: 30px; /* Rounds top-left corner */
+  border-bottom-left-radius: 30px; /* Rounds bottom-left corner */
+  flex: 1; /* Allows flexible box growth */
+  /* Add more styles for contact info */
+}
+
+.contact-info h2 {
+  margin: 40px 0;
+}
+
+.contact-info p {
+  font-weight: 300;
+  margin: 20px 0;
+}
+
+.social-icons {
+  margin-top: 4rem;
+}
+
+.contact-form-card {
+  background: #ffffff;
+  padding: 90px 75px;
+  border-top-right-radius: 30px; /* Rounds top-right corner */
+  border-bottom-right-radius: 30px; /* Rounds bottom-right corner */
+  flex: 2; /* Allows double the size of contact-info */
+}
+
+.contact-form-card h2 {
+  margin-bottom: 15px;
+  font-size: 40px;
+  font-weight: 600;
+}
+
+.contact-form-card p {
+  margin-bottom: 1em;
+  font-size: 21px;
+  font-weight: 400;
+}
+
+#contact-form {
+  margin-top: 60px;
+}
+
+.form-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.form-row input,
+.contact-form-card textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  height: 60px;
+  background-color: rgba(133, 195, 64, 0.1);
+  transition: border-color 0.3s ease;
+  outline: none;
+}
+
+.form-row input:focus {
+  border-color: #85C340;
+}
+
+#first-name {
+  margin-right: 20px;
+}
+
+.contact-form-card textarea {
+  height: 100px; /* Adjust height as necessary */
+}
+
+.contact-form-card button {
+  width: 100%;
+  padding: 24px 0;
+  margin-top: 5rem;
+  background-color: #293a56;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 19px;
+}
+
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column;
+    padding: 20px; /* Adjust padding for smaller screens */
+  }
+
+  .contact-info,
+  .contact-form-card {
+    width: 100%;
+    border-radius: 8px; /* Round all corners for mobile */
+    margin-bottom: 10px; /* Adds space between stacked items */
+  }
+
+  .contact-info {
+    order: 2; /* Puts contact info below form on mobile */
+  }
+
+  .contact-form-card {
+    order: 1; /* Puts form above contact info on mobile */
+  }
+}
+
+.footer_1 {
+  background-color: #303030;
+  display: flex;
+  justify-content: space-between;
+  padding: 63px 6rem 190px;
+}
+
+.footer_1 img {
+  padding-right: 2rem;
+  height: 70px;
+}
+
+.footer_heading {
+  color: #85c340;
+  font-size: 21px;
+  font-weight: 600;
+  margin: 1em 0;
+}
+
+.footer_text {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 400;
+  margin: 1em 0;
+}
+
+.footer_1_section {
+  display: flex;
+}
+
+.footer_1_section1_phone {
+  display: flex;
+}
+
+.footer_1_section1_phone_title {
+  margin-right: 13px;
+  color: #85c340;
+}
+
+.footer_1_section1_phonenumbers {
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+}
+
+.footer_1_section2 ul {
+  list-style: none;
+}
+
+.footer_1_section2 ul li {
+  margin: 25px 30px 0;
+  color: #fff;
+}
+
+.footer_2 {
+  background-color: #3a3c39;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 17px 6rem;
+}
+
+.footer_2 p {
+  color: #fff;
+}
+
+.footer_2 span {
+  color: #85c340;
+}
+
+.footer_2 img {
+  margin: 0 10px;
+}

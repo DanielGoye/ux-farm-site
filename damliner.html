@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Irrihub - Unlocking Productivity</title>
+    <link
+      rel="icon"
+      href="https://irri-hub.com/wp-content/uploads/2022/05/favic-150x150.png"
+      sizes="32x32"
+    />
+    <link
+      rel="icon"
+      href="https://irri-hub.com/wp-content/uploads/2022/05/favic.png"
+      sizes="192x192"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="https://irri-hub.com/wp-content/uploads/2022/05/favic.png"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <style>
+      /* Base styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Arial", sans-serif; /* Replace with the specific font you're using */
+      }
+
+      /* Navigation bar styles */
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1em 2em;
+        position: absolute;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .logo {
+        font-size: 1.5em;
+        color: #fff; /* Assuming the logo is white */
+      }
+
+      .nav-links {
+        list-style-type: none;
+      }
+
+      .nav-links li {
+        display: inline;
+        margin-left: 20px;
+      }
+
+      .nav-links a {
+        text-decoration: none;
+        color: #fff; /* Assuming the text is white */
+        font-weight: bold; /* Bold font weight for navigation links */
+      }
+
+      .login-btn {
+        background-color: #85c340; /* Replace with the color of your 'Log In' button */
+        color: white;
+        border: none;
+        padding: 0.8em 4.5em; /* Increase the padding to make the button longer */
+        border-radius: 20px;
+        cursor: pointer;
+        font-weight: bold;
+      }
+
+      /* Hero section styles */
+      .hero {
+        position: relative;
+        background: linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)
+          ),
+          url("https://grekkon.co.ke/wp-content/uploads/2021/04/dam-liners-01.jpg")
+            no-repeat center center/cover;
+        color: white;
+        text-align: center;
+        padding: 150px 20px; /* Adjust padding as needed */
+        min-height: 100vh; /* Minimum height to fill the viewport */
+      }
+
+      .hero h1 {
+        font-size: 3em; /* Larger font size for the main heading */
+        margin-bottom: 0.5em;
+        font-weight: bold;
+      }
+
+      .hero p {
+        margin-bottom: 1.5em;
+        font-size: 1.2em; /* Slightly larger font size for the subheading */
+      }
+
+      .cta-buttons button {
+        margin: 5px;
+        padding: 0.8em 4.5em;
+        background-color: #85c340; /* Replace with the color of your buttons */
+        color: white;
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        font-weight: bold;
+        font-size: 1em;
+      }
+
+      .cta-buttons button:hover {
+        background-color: #3a9d56; /* Darker shade for hover effect */
+      }
+
+      /* Responsive design */
+      @media (max-width: 768px) {
+        .nav-links,
+        .login-btn {
+          display: none; /* Hide navigation links and login button on smaller screens */
+        }
+
+        .hero {
+          padding: 120px 20px;
+        }
+
+        .hero h1 {
+          font-size: 2.5em;
+        }
+
+        .hero p {
+          font-size: 1em;
+        }
+
+        .cta-buttons button {
+          width: auto; /* Allow buttons to resize with padding */
+          font-size: 0.9em;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .hero h1 {
+          font-size: 2em;
+        }
+
+        .hero p {
+          font-size: 0.8em;
+        }
+      }
+
+      .footer {
+        background-color: #333; /* Dark background for the footer */
+        color: #fff; /* White text color */
+        padding: 50px 0;
+      }
+
+      .footer-content {
+        display: flex;
+        justify-content: space-around;
+        align-items: start;
+        max-width: 1200px; /* Maximum width of the footer content */
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .footer-section h4 {
+        margin-bottom: 10px;
+      }
+
+      .footer-section p {
+        margin-bottom: 5px;
+      }
+
+      .footer-logo {
+        margin-bottom: 10px;
+        /* Set the size of your logo */
+      }
+
+      @media (max-width: 768px) {
+        .footer-content {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .footer-section {
+          margin-bottom: 20px;
+          text-align: center;
+        }
+      }
+      .green-text {
+        color: #85c340; /* Adjust this color to the specific shade of green you want */
+      }
+      .dam-liner-card {
+        background-color: #fff; /* Semi-transparent white for visibility of the hero image */
+        border-radius: 20px; /* Rounded corners for the card */
+        padding: 2em; /* Padding inside the card */
+        width: calc(
+          100% - 4em
+        ); /* Card width with respect to its parent, adjusting for padding */
+        max-width: 700px; /* Maximum width of the card */
+        box-sizing: border-box;
+        margin: 0 auto; /* Center the card */
+        position: absolute;
+        bottom: -200px; /* Position the card at the bottom of the hero section */
+        left: 50%;
+        transform: translateX(-50%); /* Center the card horizontally */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow for depth */
+      }
+
+      .dam-liner-card h2 {
+        color: #333; /* Dark color for the heading for contrast */
+        margin-bottom: 0.5em;
+      }
+
+      .dam-liner-card p {
+        color: #333; /* Dark color for the text for readability */
+        font-size: 1em; /* Adjust the font size as necessary */
+        line-height: 1.4; /* Line height for better readability */
+        margin-bottom: 1em; /* Space between paragraphs */
+      }
+      @media (max-width: 768px) {
+        .dam-liner-card {
+          padding: 1em; /* Reduce padding on smaller screens */
+          width: calc(
+            100% - 2em
+          ); /* Adjust width to account for reduced padding */
+          bottom: -60px; /* Adjust the position lower to fit the layout */
+          max-width: none; /* Allow the card to extend full width on smaller screens */
+        }
+      }
+
+      @media (max-width: 480px) {
+        .dam-liner-card {
+          padding: 1em;
+          width: calc(100% - 2em);
+          bottom: -200px; /* Further adjust the position for very small screens */
+          max-width: none;
+        }
+      }
+
+      .services-section {
+        background: url("https://res.cloudinary.com/prometheusapi/image/upload/v1704027676/public/Vector_1_dv0nkh.png");
+        background-repeat: no-repeat;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: left;
+      }
+
+      .service-item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 40px 0; /* Increased margin for more space between items */
+      }
+
+      .service-item:nth-child(even) {
+        flex-direction: row-reverse;
+      }
+
+      .service-icon {
+        background: #85c340; /* Example color, replace with actual icon */
+        border-radius: 100%; /* Fully rounded icons */
+        width: 160px; /* Double the icon size */
+        height: 160px; /* Double the icon size */
+        margin: 0 140px; /* Increased space between icon and text */
+        /* Include styles for the image/icon */
+      }
+
+      .service-text {
+        max-width: 600px;
+      }
+
+      .service-text h3 {
+        font-weight: bold;
+        font-size: 1.5em; /* Increased font size for headings */
+        margin-bottom: 15px;
+      }
+
+      .service-text ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .service-text ul li {
+        font-size: 1.2em; /* Increased font size for list items */
+        font-weight: bold; /* Make list text bolder */
+        margin-bottom: 5px; /* Add space between list items */
+      }
+
+      .service-text ul li::before {
+        content: "• ";
+        color: #4caf50; /* Use the same green color as the icons */
+        font-size: 1.5em; /* Larger bullet points */
+        margin-right: 10px; /* Increased space after bullet points */
+      }
+
+      @media (max-width: 768px) {
+        .service-item {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .service-item:nth-child(even) {
+          flex-direction: column;
+        }
+
+        .service-icon {
+          margin-bottom: 20px; /* Adjusted bottom margin for mobile */
+        }
+
+        .service-text h3 {
+          font-size: 1.2em; /* Slightly smaller font size for mobile */
+        }
+
+        .service-text ul li {
+          font-size: 1em; /* Adjust font size for list items on mobile */
+        }
+      }
+      .specifications-container {
+        max-width: 1200px; /* Set a max-width for the container */
+        margin: auto; /* Center the container */
+        text-align: center;
+        padding: 20px; /* Padding around the container */
+      }
+
+      .specifications-container h2 {
+        background-color: #4caf50;
+        color: white;
+        padding: 20px;
+        margin-bottom: 30px; /* Space below the heading */
+        display: inline-block; /* Makes the h2 width content-based */
+        width: auto; /* Auto width based on content size */
+      }
+
+      .specifications-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px auto; /* Center the table with automatic margins */
+      }
+
+      .specifications-table thead th {
+        background-color: #4caf50;
+        color: white;
+        font-weight: bold;
+        padding: 15px;
+        border: 1px solid #ddd;
+      }
+
+      .specifications-table tbody td {
+        padding: 15px;
+        border: 1px solid #ddd;
+        background-color: #fff;
+      }
+
+      .specifications-table tbody tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+
+      /* Responsive adjustments as needed */
+      @media (max-width: 768px) {
+        .specifications-container {
+          padding: 10px;
+        }
+
+        .specifications-table thead th,
+        .specifications-table tbody td {
+          padding: 10px;
+        }
+      }
+
+      .cta-section {
+        text-align: center; /* Center the text */
+        padding: 40px 20px; /* Padding above and below the text */
+        /* Background image will be set here */
+        background: url("https://res.cloudinary.com/prometheusapi/image/upload/v1704027676/public/Vector_1_dv0nkh.png");
+        background-repeat: no-repeat;
+      }
+
+      .cta-section h2 {
+        color: #333; /* Dark grey color for the heading */
+        font-size: 24px; /* Large font size for the heading */
+        margin-bottom: 10px; /* Space below the heading */
+        font-weight: bold; /* Bold font weight for the heading */
+      }
+
+      .cta-section p {
+        color: #333; /* Dark grey color for the paragraph */
+        margin-bottom: 20px; /* Space below the paragraph */
+      }
+
+      .cta-button {
+        background-color: #4caf50; /* Green background color for the button */
+        color: white; /* White color for the button text */
+        border: none; /* No border for the button */
+        padding: 15px 30px; /* Padding inside the button */
+        border-radius: 5px; /* Slightly rounded corners for the button */
+        cursor: pointer; /* Cursor changes to a pointer when hovered over the button */
+        font-size: 18px; /* Larger font size for the button */
+        font-weight: bold; /* Bold font weight for the button */
+        transition: background-color 0.3s; /* Smooth transition for hover effect */
+      }
+
+      .cta-button:hover {
+        background-color: #367c39; /* Darker shade of green for the hover effect */
+      }
+
+      /* Responsive adjustments for smaller screens */
+      @media (max-width: 768px) {
+        .cta-section h2 {
+          font-size: 20px; /* Slightly smaller font size for the heading */
+        }
+
+        .cta-section p {
+          font-size: 16px; /* Smaller font size for the paragraph */
+        }
+
+        .cta-button {
+          padding: 12px 25px; /* Smaller padding inside the button */
+          font-size: 16px; /* Smaller font size for the button */
+        }
+      }
+
+      @media (max-width: 480px) {
+        .cta-section {
+          padding: 20px 10px; /* Smaller padding for the section */
+        }
+
+        .cta-section h2 {
+          font-size: 18px; /* Further reduced font size for the heading */
+        }
+
+        .cta-button {
+          padding: 10px 20px; /* Further reduced padding inside the button */
+        }
+      }
+
+      .dam-liner-calculator {
+        max-width: 600px; /* Adjust the width as necessary */
+        margin: auto;
+        padding: 20px;
+        background-color: #ebf8e1; /* Light green background as seen in the image */
+        border-radius: 8px; /* Rounded corners for the container */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+      }
+
+      .dam-liner-calculator label {
+        display: block;
+        margin-top: 10px;
+        color: #333; /* Dark text for better readability */
+        font-size: 16px; /* Slightly larger font size for labels */
+      }
+
+      .form-control {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        margin-bottom: 15px;
+        border-radius: 4px;
+        border: 1px solid #ccc; /* Light grey border */
+        box-sizing: border-box; /* Include padding in the width */
+      }
+
+      .cost-display h3 {
+        color: #333; /* Dark text color */
+        text-align: center; /* Center align the cost */
+        margin-top: 20px; /* Space above the cost display */
+      }
+
+      .btn-purchase {
+        background-color: #4caf50; /* Green background for purchase button */
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: bold;
+        width: 100%; /* Full width button */
+        box-sizing: border-box;
+        transition: background-color 0.3s;
+      }
+
+      .btn-purchase:hover {
+        background-color: #367c39; /* Darker green on hover */
+      }
+
+      /* Responsive adjustments for smaller screens */
+      @media (max-width: 480px) {
+        .dam-liner-calculator {
+          padding: 10px;
+        }
+
+        .dam-liner-calculator label,
+        .cost-display h3 {
+          font-size: 14px;
+        }
+
+        .btn-purchase {
+          padding: 8px 16px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav>
+      <div class="logo">
+        <img
+          src="https://res.cloudinary.com/prometheusapi/image/upload/v1703852496/public/logo-bw_2x_w3karq.png"
+          width="200px"
+          alt="IrriHub Logo"
+        />
+      </div>
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="company.html">Company</a></li>
+        <li>
+          <a href="#" style="color: #85c340; border-bottom: 3px solid #85c340"
+            >Products</a
+          >
+        </li>
+        <li><a href="impact.html">Impact</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+      <button class="login-btn">Log In</button>
+    </nav>
+
+    <!-- Main Hero Section -->
+    <header class="hero">
+      <div class="dam-liner-card">
+        <h2>Dam Liner</h2>
+        <p>
+          At Irri-Hub Ke, we acknowledge the urgent need for rainwater
+          harvesting due to climate change disruptions. With prolonged dry
+          seasons and unpredictable floods becoming the norm, adaptation is
+          crucial.
+        </p>
+        <p>
+          We offer UV-protected HDPE liners, highly durable and resistant to
+          tear, puncture, and stress crack, ensuring long-term use. Recommended
+          thickness varies based on pan size and interior smoothness, providing
+          a comprehensive solution for effective rainwater harvesting and
+          storage in line with sustainable water management practices.
+        </p>
+      </div>
+    </header>
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br /><br /><br /><br /><br /><br />
+
+    <br />
+
+    <div class="services-section">
+      <div class="service-item">
+        <img
+          src="https://res.cloudinary.com/prometheusapi/image/upload/v1704027978/public/features_1_zvbx1e.png"
+          alt="Features"
+          class="service-icon"
+        />
+        <div class="service-text">
+          <h2>Features</h2>
+          <ul>
+            <li>0.5mm gauge (Light gauge)</li>
+            <li>0.75mm gauge (Medium gauge)</li>
+            <li>1mm gauge (Heavy gauge)</li>
+            <li>HDP material used.</li>
+            <li>UV treated liners.</li>
+            <li>Black in colour.</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Repeat the structure for Benefits, What's Included, and Free Installation Services -->
+      <!-- Benefits -->
+      <div class="service-item">
+        <img
+          src="https://res.cloudinary.com/prometheusapi/image/upload/v1704035827/public/incentive_t1qgdj.png"
+          alt="Benefits"
+          class="service-icon"
+        />
+        <div class="service-text">
+          <h3>Benefits</h3>
+          <ul>
+            <li>Harvests enough water.</li>
+            <li>Reduces risks of floods.</li>
+            <li>1mm gauge (Heavy gauge)</li>
+            <li>10 times cheaper than water tanks.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- What's Included -->
+      <div class="service-item">
+        <img
+          src="https://res.cloudinary.com/prometheusapi/image/upload/v1704035865/public/box_1_1_adeluz.png"
+          alt="What's Included"
+          class="service-icon"
+        />
+        <div class="service-text">
+          <h3>What's Included</h3>
+          <ul>
+            <li>Customized according to your water pan size.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Free Installation Services -->
+      <div class="service-item">
+        <img
+          src="https://res.cloudinary.com/prometheusapi/image/upload/v1704035897/public/responsible_thsb5h.png"
+          alt="Free Installation Services"
+          class="service-icon"
+        />
+        <div class="service-text">
+          <h3>Free Installation Services</h3>
+          <ul>
+            <li>Installation & Training.</li>
+            <li>After sale Support.</li>
+            <li>
+              Warranty period - 10 years, <br />
+              0.75mm - 5 years, 0.5mm - 2 years.
+            </li>
+            <!-- <li>Casuals to be provided by farmer.</li> -->
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="specifications-container">
+      <h2>Specifications & Costs</h2>
+      <table class="specifications-table">
+        <thead>
+          <tr>
+            <th>Damliner Gauge</th>
+            <th>Surface type</th>
+            <th>Cost implication / Per square meter</th>
+            <th>Lifespan</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>0.5mm</td>
+            <td>Very smooth surfaces</td>
+            <td>Kshs 250</td>
+            <td>15 years</td>
+          </tr>
+          <tr>
+            <td>0.75mm</td>
+            <td>A mix of smooth and rough surfaces</td>
+            <td>Kshs 350</td>
+            <td>25 years</td>
+          </tr>
+          <tr>
+            <td>1mm</td>
+            <td>Very rough surfaces</td>
+            <td>Kshs 400</td>
+            <td>50 years</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+
+    <div class="cta-section">
+      <h2>
+        Starting Your Farming Journey The Climate Smart Way Has Never Been
+        Easier
+      </h2>
+      <p>click the button below to get in touch with us</p>
+      <button class="cta-button">Request a presite visit</button>
+    </div>
+    <br />
+    <h1 style="text-align: center">Customize and Purchase Now</h1>
+    <br />
+    <div class="dam-liner-calculator" style="text-align: center">
+      <label for="surfaceType">Surface Type:</label>
+      <select id="surfaceType" class="form-control" onchange="updateCost()">
+        <option value="250">0.5mm - Very Smooth Surfaces</option>
+        <option value="350">0.75mm - Mixed Surfaces</option>
+        <option value="400">1mm - Rough Surfaces</option>
+      </select>
+
+      <label for="area">Area (sqm):</label>
+      <input
+        type="number"
+        id="area"
+        class="form-control"
+        oninput="updateCost()"
+      />
+
+      <div class="cost-display">
+        <h3>Total Cost: KES <span id="totalCost">0</span>/=</h3>
+      </div>
+      <button
+        type="button"
+        class="btn btn-success btn-purchase"
+        data-toggle="modal"
+        data-target="#purchaseModal"
+      >
+        Purchase
+      </button>
+      <br />
+      <br />
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
+
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-section">
+          <img
+            src="https://irri-hub.com/wp-content/uploads/2022/04/irrihub.png"
+            alt="Irrihub Logo"
+            class="footer-logo"
+          />
+          <!-- Additional company info here -->
+        </div>
+        <div class="footer-section">
+          <h4 style="color: #85c340">Get in Touch</h4>
+          <p>
+            Kilimani - Ngong Road <br /><br />
+            Next to Dima Driving School
+          </p>
+          <br />
+          <p>
+            <span style="color: #85c340"> Phone: </span> +254 739 587 934
+            <br /><br />
+            +254 112 148 880
+          </p>
+          <!-- More contact info here -->
+        </div>
+        <div class="footer-section">
+          <h4>Company</h4>
+          <br />
+          <h4>Products</h4>
+          <br />
+          <h4>Impact</h4>
+          <br />
+          <h4>Contact Us</h4>
+          <!-- Additional links or info here -->
+        </div>
+        <div class="footer-section">
+          <h4>Climate Smart Drip Kits</h4>
+          <br />
+          <h4>Climate Smart Greenhouses</h4>
+          <br />
+          <h4>Climate Smart Irrigation</h4>
+          <br />
+          <h4>Climate Smart Solar</h4>
+          <!-- Additional links or info here -->
+        </div>
+        <!-- Add more sections as needed -->
+      </div>
+    </footer>
+  </body>
+</html>

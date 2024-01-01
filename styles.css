@@ -1,0 +1,335 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap");
+
+body {
+  font-family: "Montserrat", sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+header {
+  position: relative;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("images/solar_pump.png") no-repeat center center/cover;
+  color: white;
+  text-align: center;
+  padding: 0px 20px;
+  min-height: 100vh;
+  margin: 0 0 15rem;
+}
+
+.nav_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 4rem 0;
+}
+
+header img {
+  height: 95px;
+}
+
+.nav_links {
+  list-style: none;
+  display: flex;
+  margin: 0px 90px 0px 0px;
+}
+
+.nav_links li {
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  padding: 0 18px;
+}
+
+.nav_links li a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.nav_links .active {
+  color: #85c340;
+}
+
+.login_button {
+  border-radius: 30px;
+  background: #85c340;
+  width: 180px;
+  height: 55px;
+  flex-shrink: 0;
+  color: #fff;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  border: none;
+}
+
+.green_button {
+  border-radius: 30px;
+  background: #85c340;
+  width: fit-content;
+  color: #fff;
+  border: none;
+  height: 55px;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.dam-liner-card {
+  background-color: rgba(
+    255,
+    255,
+    255,
+    1
+  ); /* Semi-transparent white for visibility of the hero image */
+  border-radius: 20px; /* Rounded corners for the card */
+  padding: 2em; /* Padding inside the card */
+  width: calc(
+    100% - 4em
+  ); /* Card width with respect to its parent, adjusting for padding */
+  max-width: 700px; /* Maximum width of the card */
+  box-sizing: border-box;
+  margin: 0 auto; /* Center the card */
+  position: absolute;
+  bottom: -222px; /* Position the card at the bottom of the hero section */
+  left: 50%;
+  transform: translateX(-50%); /* Center the card horizontally */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow for depth */
+}
+
+.dam-liner-card h2,
+.section_heading {
+  color: #333; /* Dark color for the heading for contrast */
+  margin-bottom: 0.5em;
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.dam-liner-card p {
+  color: #333; /* Dark color for the text for readability */
+  font-size: 1em; /* Adjust the font size as necessary */
+  line-height: 1.4; /* Line height for better readability */
+  margin-bottom: 1em; /* Space between paragraphs */
+}
+
+.dam-liner-card span,
+.section_heading span {
+  color: #85c340;
+}
+
+.features_section {
+  position: relative;
+  overflow: hidden;
+  padding: 156px 0 129px;
+}
+
+.features_section::before,
+.features_section::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+}
+
+.features_section::before {
+  left: 0;
+  background-image: url("images/Vector_1.png");
+  bottom: 200px;
+}
+
+.features_section::after {
+  right: 0;
+  background-image: url("images/Vector.png");
+  top: 161px;
+}
+
+.feature {
+  display: flex;
+  justify-content: center;
+  margin: 50px 22rem;
+  z-index: 1;
+}
+
+.features_border {
+  background-color: #85c340;
+  width: fit-content;
+  border-radius: 50%;
+  padding: 30px 34px;
+}
+
+.features_border_left {
+  margin: 0 60px 0 0;
+}
+
+.features_border_right {
+  margin: 0 0 0 60px;
+}
+
+.pricing_table {
+  margin: 5rem 0;
+}
+
+.pricing_table_section {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgba(133, 195, 64, 0.3);
+  margin: 20px 280px;
+  padding: 0 45px 0 0;
+  border-radius: 25px;
+}
+
+.pricing_table_section span {
+  background-color: #85c340;
+  color: #fff;
+  padding: 16px 57px;
+  border-radius: 25px;
+}
+
+.request_visit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 55rem;
+  margin: auto;
+}
+
+.request_visit button {
+  margin: 10px 0;
+  padding: 0 45px;
+  font-size: 19px;
+}
+
+.footer {
+  margin-top: 10rem;
+}
+
+.footer_1 {
+  background-color: #303030;
+  display: flex;
+  justify-content: space-between;
+  padding: 63px 6rem 190px;
+}
+
+.footer_1 img {
+  padding-right: 2rem;
+  height: 70px;
+}
+
+.footer_heading {
+  color: #85c340;
+  font-size: 21px;
+  font-weight: 600;
+}
+
+.footer_text {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.footer_1_section {
+  display: flex;
+}
+
+.footer_1_section1_phone {
+  display: flex;
+}
+
+.footer_1_section1_phone_title {
+  margin-right: 13px;
+  color: #85c340;
+}
+
+.footer_1_section1_phonenumbers {
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+}
+
+.footer_1_section2 ul {
+  list-style: none;
+}
+
+.footer_1_section2 ul li {
+  margin: 25px 30px 0;
+  color: #fff;
+}
+
+.footer_2 {
+  background-color: #3a3c39;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 17px 6rem;
+}
+
+.footer_2 p {
+  color: #fff;
+}
+
+.footer_2 span {
+  color: #85c340;
+}
+
+.footer_2 img {
+  margin: 0 10px;
+}
+
+.calculator {
+  margin-top: 7rem;
+}
+
+.dam-liner-calculator {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+  background-color: #ebf8e1;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.dam-liner-calculator label {
+  display: block;
+  margin-top: 10px;
+  color: #333;
+  font-size: 16px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.cost-display h3 {
+  color: #333;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.btn-purchase {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  width: 100%;
+  box-sizing: border-box;
+  transition: background-color 0.3s;
+}
+
+.btn-purchase:hover {
+  background-color: #367c39;
+}
