@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="dashboard.css" />
+    <title>Dashboard</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="logo_container">
+        <img src="images/logo_colored.png" alt="" class="logo" />
+        <div class="theme_switcher">
+          <img src="images/moon.png" alt="" />
+          <img src="images/sun.png" alt="" />
+        </div>
+      </div>
+      <div class="search_box">
+        <img src="images/search_icon.png" alt="" />
+        <input type="text" name="search" id="search" placeholder="Search" />
+      </div>
+    </header>
+    <div class="main_container">
+      <nav class="navigator_container">
+        <div class="avatar_container">
+          <img src="images/avatar.png" alt="user_avatar" class="avatar_img" />
+          <p class="user_name">
+            John Doe <span><img src="images/edit.png" alt="edit" /></span>
+          </p>
+        </div>
+        <div class="links_container">
+          <ul>
+            <li class="active">
+              <a href="/dashboard.html">
+                <img src="images/home_icon.png" alt="" />
+                <span class="link_name">Dashboard</span></a
+              >
+            </li>
+            <li>
+              <a href="/agrodealers.html">
+                <img src="images/find_icon.png" alt="" />
+                <span class="link_name">Agro Dealers</span></a
+              >
+            </li>
+            <li>
+              <a href="#">
+                <img src="images/weather_icon.png" alt="" />
+                <span class="link_name">Weather</span></a
+              >
+            </li>
+            <li>
+              <a href="#">
+                <img src="images/insights_icon.png" alt="" />
+                <span class="link_name">Insights</span></a
+              >
+            </li>
+            <li>
+              <a href="#">
+                <img src="images/profile_icon.png" alt="" />
+                <span class="link_name">Profile</span></a
+              >
+            </li>
+            <li>
+              <a href="#">
+                <img src="images/back_arrow.png" alt="" />
+                <span class="link_name">Back</span></a
+              >
+            </li>
+            <li>
+              <a href="#">
+                <img src="images/exit_icon.png" alt="" />
+                <span class="link_name">Logout</span></a
+              >
+            </li>
+          </ul>
+        </div>
+        <p class="version_name">Version 1.0</p>
+      </nav>
+      <main>
+        <section class="orders_section">
+          <div class="orders_heading">
+            <img src="images/orders_icon.png" alt="" />
+            <h3 class="orders_heading_text">5 Complete Orders</h3>
+          </div>
+          <div class="order_labels">
+            <span class="order_labels_item" style="margin-right: 93px">Id</span>
+            <span class="order_labels_item" style="margin-right: 102px"
+              >Pack</span
+            >
+            <span class="order_labels_item" style="margin-right: 31px"
+              >Items</span
+            >
+            <span class="order_labels_item" style="margin-right: 63px"
+              >Status</span
+            >
+            <span class="order_labels_item">Date</span>
+            <span class="order_labels_item"> </span>
+          </div>
+          <div class="order_details">
+            <span class="order_details_item">#PU220k</span>
+            <span class="order_details_item">Pop up sprinker</span>
+            <span class="order_details_item">1</span>
+            <span class="order_details_item">Completed</span>
+            <span class="order_details_item">1/11/23</span>
+            <span class="order_details_item">View</span>
+          </div>
+          <div class="order_details">
+            <span class="order_details_item">#PU220k</span>
+            <span class="order_details_item">Pop up sprinker</span>
+            <span class="order_details_item">1</span>
+            <span class="order_details_item">Completed</span>
+            <span class="order_details_item">1/11/23</span>
+            <span class="order_details_item">View</span>
+          </div>
+          <div class="order_details">
+            <span class="order_details_item">#PU220k</span>
+            <span class="order_details_item">Pop up sprinker</span>
+            <span class="order_details_item">1</span>
+            <span class="order_details_item">Completed</span>
+            <span class="order_details_item">1/11/23</span>
+            <span class="order_details_item">View</span>
+          </div>
+          <div class="order_details">
+            <span class="order_details_item">#PU220k</span>
+            <span class="order_details_item">Pop up sprinker</span>
+            <span class="order_details_item">1</span>
+            <span class="order_details_item">Completed</span>
+            <span class="order_details_item">1/11/23</span>
+            <span class="order_details_item">View</span>
+          </div>
+          <div class="order_details">
+            <span class="order_details_item">#PU220k</span>
+            <span class="order_details_item">Pop up sprinker</span>
+            <span class="order_details_item">1</span>
+            <span class="order_details_item">Completed</span>
+            <span class="order_details_item">1/11/23</span>
+            <span class="order_details_item">View</span>
+          </div>
+          <hr style="margin-top: 3rem" />
+        </section>
+        <section class="discount_section">
+          <div class="discount_heading">
+            <div class="discount_label">
+              <img src="images/discount_icon.png" alt="" />
+              <h3 class="discount_label_text">Discount Tracker</h3>
+            </div>
+            <h3 class="discount_learn_more">Learn More</h3>
+          </div>
+          <div class="discount_progress">
+            <hr class="green" />
+            <hr class="black" />
+            <span class="number">26%</span>
+          </div>
+          <div class="specific_discounts">
+            <div class="specific_discount">
+              <p class="specific_discount_label">Completed Orders</p>
+              <p class="specific_discount_text">Ksh. 146,000</p>
+            </div>
+            <div class="specific_discount">
+              <p class="specific_discount_label">Next Discount</p>
+              <p class="specific_discount_text">Ksh. 14,600</p>
+            </div>
+            <div class="specific_discount">
+              <p class="specific_discount_label">Projected Orders</p>
+              <p class="specific_discount_text">Ksh. 514,990</p>
+            </div>
+          </div>
+          <div class="discount_coupon">
+            <p class="discount_coupon_text">Coupon: #GT33G3K</p>
+            <button class="discount_coupon_button">Renew Code</button>
+          </div>
+        </section>
+      </main>
+      <aside>
+        <div class="other_links">
+          <div class="other_links_1">
+            <h3 class="other_links_heading">Important Links</h3>
+            <p class="other_links_text">Frequently asked questions.</p>
+            <p class="other_links_text">Value pack deals</p>
+            <p class="other_links_text blue_link">More products.</p>
+          </div>
+          <div class="other_links_2">
+            <h3 class="other_links_heading">Settings</h3>
+            <p class="other_links_text">Location setting</p>
+            <p class="other_links_text">Crops presences.</p>
+            <p class="other_links_text">Weather Updates</p>
+            <p class="other_links_text blue_link">
+              Migration requests and tools
+            </p>
+          </div>
+        </div>
+        <div class="assistance"></div>
+      </aside>
+    </div>
+    <footer class="footer">
+      <section class="footer_1">
+        <div class="footer_1_section footer_1_section1">
+          <img src="images/logo_colored.png" alt="" />
+          <div>
+            <p class="footer_heading">Get in touch</p>
+            <p class="footer_text">
+              Kilimani - Ndemi Road - <br />Next to Dima Driving School
+            </p>
+            <div class="footer_1_section1_phone">
+              <span class="footer_1_section1_phone_title">Phone:</span>
+              <div class="footer_1_section1_phonenumbers">
+                <span>+254 732 957 984 /</span>
+                <span>+254 112 148 880</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer_1_section footer_1_section2">
+          <ul>
+            <li>Company</li>
+            <li>Products</li>
+            <li>Impact</li>
+            <li>Contact Us</li>
+          </ul>
+          <ul>
+            <li>Climate Smart Drip Kits</li>
+            <li>Drip button systems</li>
+            <li>Dam Liners</li>
+            <li>Mulching technology</li>
+            <li>Greenhouses</li>
+          </ul>
+        </div>
+      </section>
+      <section class="footer_2">
+        <p>2023 &copy All rights reserved by <span>Irri-hub Ke</span></p>
+        <div>
+          <img src="images/Twitter_Circled.png" alt="" />
+          <img src="images/Instagram_Circle.png" alt="" />
+          <img src="images/Facebook.png" alt="" />
+        </div>
+      </section>
+    </footer>
+  </body>
+</html>
