@@ -382,3 +382,52 @@ aside {
   padding: 10px 30px;
   box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
 }
+
+.pagination_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5rem;
+}
+
+.page_number {
+  border: solid #86c341 1px;
+  border-radius: 50%;
+  padding: 0px 7px;
+  margin: 0 5px;
+}
+
+.pagination_arrow {
+  margin: 0 15px;
+}
+
+.agrodealer_filter_container {
+  display: flex;
+  justify-content: space-between;
+  background: #dfead980;
+  padding: 17px 25px;
+  border-radius: 10px;
+  margin: 0 0 24px;
+}
+
+.agrodealer_filters {
+  display: flex;
+  align-items: center;
+  gap: 23px;
+}
+
+.agrodealer_heading {
+  color: #347db1;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.filter {
+  color: #347db1;
+}
+
+.filter_category {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
