@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
     <link rel="stylesheet" href="dashboard.css" />
-    <title>Dashboard</title>
+    <title>Weather</title>
   </head>
   <body>
     <header class="header">
@@ -31,7 +31,7 @@
         </div>
         <div class="links_container">
           <ul>
-            <li class="active">
+            <li>
               <a href="/dashboard.html">
                 <img src="images/home_icon.png" alt="" />
                 <span class="link_name">Dashboard</span></a
@@ -43,7 +43,7 @@
                 <span class="link_name">Agro Dealers</span></a
               >
             </li>
-            <li>
+            <li class="active">
               <a href="/weather.html">
                 <img src="images/weather_icon.png" alt="" />
                 <span class="link_name">Weather</span></a
@@ -78,99 +78,82 @@
         <p class="version_name">Version 1.0</p>
       </nav>
       <main>
-        <section class="orders_section">
-          <div class="orders_heading">
-            <img src="images/orders_icon.png" alt="" />
-            <h3 class="orders_heading_text">5 Complete Orders</h3>
+        <div class="agrodealer_filter_container">
+          <span class="agrodealer_heading">Weather</span>
+          <div class="agrodealer_filters" style="gap: 8px">
+            <span>Kakamega</span>
+            <img src="images/location_icon.png" alt="" />
           </div>
-          <div class="order_labels">
-            <span class="order_labels_item" style="margin-right: 93px">Id</span>
-            <span class="order_labels_item" style="margin-right: 102px"
-              >Pack</span
-            >
-            <span class="order_labels_item" style="margin-right: 31px"
-              >Items</span
-            >
-            <span class="order_labels_item" style="margin-right: 63px"
-              >Status</span
-            >
-            <span class="order_labels_item">Date</span>
-            <span class="order_labels_item"> </span>
-          </div>
-          <div class="order_details">
-            <span class="order_details_item">#PU220k</span>
-            <span class="order_details_item">Pop up sprinker</span>
-            <span class="order_details_item">1</span>
-            <span class="order_details_item">Completed</span>
-            <span class="order_details_item">1/11/23</span>
-            <span class="order_details_item">View</span>
-          </div>
-          <div class="order_details">
-            <span class="order_details_item">#PU220k</span>
-            <span class="order_details_item">Pop up sprinker</span>
-            <span class="order_details_item">1</span>
-            <span class="order_details_item">Completed</span>
-            <span class="order_details_item">1/11/23</span>
-            <span class="order_details_item">View</span>
-          </div>
-          <div class="order_details">
-            <span class="order_details_item">#PU220k</span>
-            <span class="order_details_item">Pop up sprinker</span>
-            <span class="order_details_item">1</span>
-            <span class="order_details_item">Completed</span>
-            <span class="order_details_item">1/11/23</span>
-            <span class="order_details_item">View</span>
-          </div>
-          <div class="order_details">
-            <span class="order_details_item">#PU220k</span>
-            <span class="order_details_item">Pop up sprinker</span>
-            <span class="order_details_item">1</span>
-            <span class="order_details_item">Completed</span>
-            <span class="order_details_item">1/11/23</span>
-            <span class="order_details_item">View</span>
-          </div>
-          <div class="order_details">
-            <span class="order_details_item">#PU220k</span>
-            <span class="order_details_item">Pop up sprinker</span>
-            <span class="order_details_item">1</span>
-            <span class="order_details_item">Completed</span>
-            <span class="order_details_item">1/11/23</span>
-            <span class="order_details_item">View</span>
-          </div>
-          <hr style="margin-top: 3rem" />
-        </section>
-        <section class="discount_section">
-          <div class="discount_heading">
-            <div class="discount_label">
-              <img src="images/discount_icon.png" alt="" />
-              <h3 class="discount_label_text">Discount Tracker</h3>
+        </div>
+        <section class="agrodealer_card">
+          <p class="weather_location">Kakameaga, western , Kenya</p>
+          <div class="weather_data">
+            <div class="description">
+              <img src="images/weather_symbol.png" alt="" />
+              <span class="description_text">Partly Cloudy</span>
             </div>
-            <h3 class="discount_learn_more">Learn More</h3>
-          </div>
-          <div class="discount_progress">
-            <hr class="green" />
-            <hr class="black" />
-            <span class="number">26%</span>
-          </div>
-          <div class="specific_discounts">
-            <div class="specific_discount">
-              <p class="specific_discount_label">Completed Orders</p>
-              <p class="specific_discount_text">Ksh. 146,000</p>
-            </div>
-            <div class="specific_discount">
-              <p class="specific_discount_label">Next Discount</p>
-              <p class="specific_discount_text">Ksh. 14,600</p>
-            </div>
-            <div class="specific_discount">
-              <p class="specific_discount_label">Projected Orders</p>
-              <p class="specific_discount_text">Ksh. 514,990</p>
+            <p class="temperature">27°c</p>
+            <div class="description_details">
+              <p class="description_detail">Wind: 20kmph</p>
+              <p class="description_detail">Precip: 0mm</p>
+              <p class="description_detail">Pressure: 1011mb</p>
             </div>
           </div>
-          <div class="discount_coupon">
-            <p class="discount_coupon_text">Coupon: #GT33G3K</p>
-            <button class="discount_coupon_button">Renew Code</button>
+          <div class="weather_days">
+            <div class="weather_day">
+              <span class="day">Monday</span>
+              <img src="images/transparent_cloud.png" alt="" />
+              <span class="day_temperature">27°c</span>
+            </div>
+            <div class="weather_day">
+              <span class="day">Tuesday</span>
+              <img src="images/transparent_cloud.png" alt="" />
+              <span class="day_temperature">27°c</span>
+            </div>
+            <div class="weather_day">
+              <span class="day">Wednesday</span>
+              <img src="images/transparent_cloud.png" alt="" />
+              <span class="day_temperature">27°c</span>
+            </div>
+            <div class="weather_day">
+              <span class="day">Thursday</span>
+              <img src="images/transparent_cloud.png" alt="" />
+              <span class="day_temperature">27°c</span>
+            </div>
+            <div class="weather_day">
+              <span class="day">Friday</span>
+              <img src="images/transparent_cloud.png" alt="" />
+              <span class="day_temperature">27°c</span>
+            </div>
+            <div class="weather_day">
+              <span class="day">Saturday</span>
+              <img src="images/transparent_cloud.png" alt="" />
+              <span class="day_temperature">27°c</span>
+            </div>
+            <div class="weather_day">
+              <span class="day">Sunday</span>
+              <img src="images/transparent_cloud.png" alt="" />
+              <span class="day_temperature">27°c</span>
+            </div>
           </div>
         </section>
+        <section class="agrodealer_card">
+          <div class="forecast_heading">
+            <p class="forecast_heading_text">Forecast of outside</p>
+            <div class="forecast_heading_categories">
+              <ul>
+                <li class="category_item">Temperature</li>
+                <li class="category_item">Humidity</li>
+                <li class="category_item">Radiation</li>
+              </ul>
+            </div>
+          </div>
+          <div class="forecast_chart">
+            <p class="temperature_label">Temperature</p>
+            <p class="humidity_label">Humidity</p>
+          </div>
+        </section>
+        <section class="agrodealer_card"></section>
       </main>
       <aside>
         <div class="other_links">

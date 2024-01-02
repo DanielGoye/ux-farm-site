@@ -46,7 +46,7 @@ body {
 }
 
 .navigator_container {
-  background-color: #c6d5bd;
+  background-color: #dfead9;
   width: fit-content;
   display: flex;
   flex-direction: column;
@@ -68,7 +68,7 @@ body {
 }
 
 .links_container ul .active {
-  background-color: #b4c1ad;
+  background-color: #c6d5bd;
   border-radius: 10px;
 }
 
@@ -95,7 +95,7 @@ body {
 }
 
 .orders_section {
-  background-color: #c6d5bd;
+  background-color: #dfead9;
   border-radius: 10px;
   box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
   padding: 38px 47px;
@@ -134,7 +134,7 @@ body {
 }
 
 .discount_section {
-  background-color: #c6d5bd;
+  background-color: #dfead9;
   border-radius: 10px;
   box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
   padding: 38px 47px;
@@ -316,7 +316,7 @@ aside {
 }
 
 .agrodealer_card {
-  background-color: #c6d5bd;
+  background-color: #dfead9;
   border-radius: 10px;
   padding: 16px 42px;
   margin: 0 0 3rem;
@@ -430,4 +430,116 @@ aside {
   display: flex;
   align-items: center;
   gap: 5px;
+}
+
+.weather_location {
+  color: #347db1;
+  font-weight: 700;
+}
+
+.weather_data {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+}
+
+.description img {
+  height: fit-content;
+}
+
+.description_text {
+  color: #86c341;
+  font-weight: 700;
+}
+
+.temperature {
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.description_detail {
+  color: #808080;
+  font-weight: 700;
+}
+
+.weather_day {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.day {
+  color: #808080;
+  font-weight: 700;
+}
+
+.weather_day img {
+  width: fit-content;
+}
+
+.day_temperature {
+  color: #000;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.weather_days {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.forecast_heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.forecast_heading_text {
+  color: #347db1;
+  font-weight: 700;
+}
+
+.forecast_heading_categories ul {
+  padding: 9px 17px;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  background: #c6d5bd;
+  border-radius: 10px;
+}
+
+.category_item {
+  color: #808080;
+  font-weight: 700;
+}
+
+.forecast_chart {
+  display: flex;
+  justify-content: space-between;
+  margin: 41px 0;
+  align-items: center;
+}
+
+.temperature_label {
+  width: fit-content;
+  color: #808080;
+  font-weight: 700;
+  font-size: 14px;
+  transform: rotate(-90deg);
+}
+
+.humidity_label {
+  width: fit-content;
+  color: #347db1;
+  font-weight: 700;
+  font-size: 16px;
+  transform: rotate(90deg);
 }
