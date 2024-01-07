@@ -1,0 +1,1221 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Irrihub - Unlocking Productivity</title>
+  <link rel="icon" href="https://irri-hub.com/wp-content/uploads/2022/05/favic-150x150.png" sizes="32x32" />
+  <link rel="icon" href="https://irri-hub.com/wp-content/uploads/2022/05/favic.png" sizes="192x192" />
+  <link rel="apple-touch-icon" href="https://irri-hub.com/wp-content/uploads/2022/05/favic.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    /* Base styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+      /* Replace with the specific font you're using */
+    }
+
+    /* Navigation bar styles */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1em 2em;
+      position: absolute;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 1.5em;
+      color: #fff;
+      /* Assuming the logo is white */
+    }
+
+    .nav-links {
+      list-style-type: none;
+    }
+
+    .nav-links li {
+      display: inline;
+      margin-left: 20px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #fff;
+      /* Assuming the text is white */
+      font-weight: bold;
+      /* Bold font weight for navigation links */
+    }
+
+    .login-btn {
+      background-color: #85c340;
+      /* Replace with the color of your 'Log In' button */
+      color: white;
+      border: none;
+      padding: 0.8em 4.5em;
+      /* Increase the padding to make the button longer */
+      border-radius: 20px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    /* Hero section styles */
+    .hero {
+      position: relative;
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url("{% static 'images/rectangle-1@2x.png' %}") no-repeat center center/cover;
+      color: white;
+      text-align: center;
+      padding: 250px 20px;
+      /* Adjust padding as needed */
+      min-height: 100vh;
+      /* Minimum height to fill the viewport */
+    }
+
+
+    .hero h1 {
+      font-size: 3em;
+      /* Larger font size for the main heading */
+      margin-bottom: 0.5em;
+      font-weight: bold;
+    }
+
+    .hero p {
+      margin-bottom: 1.5em;
+      font-size: 1.2em;
+      /* Slightly larger font size for the subheading */
+    }
+
+    .cta-buttons button {
+      margin: 5px;
+      padding: 0.8em 4.5em;
+      background-color: #85c340;
+      /* Replace with the color of your buttons */
+      color: white;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      font-weight: bold;
+      font-size: 1em;
+    }
+
+    .cta-buttons button:hover {
+      background-color: #3a9d56;
+      /* Darker shade for hover effect */
+    }
+
+    /* Responsive design */
+    @media (max-width: 768px) {
+
+      .nav-links,
+      .login-btn {
+        display: none;
+        /* Hide navigation links and login button on smaller screens */
+      }
+
+      .hero {
+        padding: 120px 20px;
+      }
+
+      .hero h1 {
+        font-size: 2.5em;
+      }
+
+      .hero p {
+        font-size: 1em;
+      }
+
+      .cta-buttons button {
+        width: auto;
+        /* Allow buttons to resize with padding */
+        font-size: 0.9em;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 2em;
+      }
+
+      .hero p {
+        font-size: 0.8em;
+      }
+    }
+
+    .what-we-do {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 100px;
+      background: #F3F9EC;
+      /* White background */
+    }
+
+    .what-we-do .content {
+      max-width: 50%;
+      /* Adjust based on actual layout requirements */
+    }
+
+    .what-we-do h2 {
+      font-size: 2.5em;
+      color: #000;
+      /* Black color text */
+      margin-bottom: 0.5em;
+    }
+
+    .what-we-do h3 {
+      font-size: 2em;
+      color: #000;
+      margin-bottom: 1em;
+    }
+
+    .what-we-do p {
+      color: #666;
+      /* Dark gray color text */
+      margin-bottom: 2em;
+    }
+
+    .learn-more-btn {
+      padding: 0.8em 3em;
+      /* Smaller than hero buttons */
+      background-color: #85c340;
+      /* Same green color for consistency */
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .image-frame {
+      /* Adjust the CSS below based on the actual image and overlay shapes */
+
+    }
+
+    /* Responsive design adjustments for this section */
+    @media (max-width: 768px) {
+      .what-we-do {
+        flex-direction: column;
+        padding: 50px 20px;
+      }
+
+      .what-we-do .content {
+        max-width: 100%;
+      }
+
+
+    }
+
+    /* Services Section styles */
+    .services {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 50px 20px;
+      background: #fff;
+      /* White background */
+    }
+
+    .partners {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      /* Space between logos */
+      margin-bottom: 40px;
+      /* Space below logos */
+    }
+
+    .partner-logo {
+      filter: grayscale(100%);
+      /* Ensure logos are in grayscale */
+      max-width: 100px;
+      /* Adjust based on actual logo sizes */
+      height: auto;
+    }
+
+    .services-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+
+    .illustration,
+    .text-content {
+      flex-basis: 50%;
+      /* Assigns equal width to both the illustration and text content */
+    }
+
+    .illustration img {
+      width: 100%;
+      display: block;
+      /* Removes any default margins or padding */
+    }
+
+    .text-content h2 {
+      font-size: 1.8em;
+      /* Adjust according to your design */
+      color: #333;
+      margin-bottom: 1rem;
+    }
+
+    .text-content .highlight {
+      color: #44c767;
+      /* The green color for highlighted text */
+    }
+
+    .text-content p {
+      font-size: 1em;
+      /* Adjust according to your design */
+      color: #666;
+    }
+
+    /* Adjusting the responsive behavior */
+    @media (max-width: 992px) {
+      .services-content {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .illustration,
+      .text-content {
+        flex-basis: 100%;
+        /* Stack them on smaller screens */
+      }
+
+      .illustration img {
+        max-width: 80%;
+        /* Adjust image max width for smaller screens */
+        margin: 0 auto;
+        /* Center the image */
+      }
+
+      .text-content {
+        order: 2;
+        /* Text content comes after the illustration */
+      }
+    }
+
+    /* Additional styles for the partners section */
+    .partners img {
+      max-height: 50px;
+      /* Control the height of the partner logos */
+      margin: 0 10px;
+      /* Horizontal margin between logos */
+      opacity: 0.6;
+      /* Tone down the logos to not compete with the main content */
+      transition: opacity 0.3s;
+    }
+
+    .partners img:hover {
+      opacity: 1;
+      /* Full opacity on hover */
+    }
+
+    .gallery {
+      text-align: center;
+      padding: 50px 20px;
+      background-color: #f0f0f0;
+      /* Adjust the background color as necessary */
+    }
+
+    .gallery h2 {
+      margin-bottom: 20px;
+      font-size: 2rem;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      /* Two columns for the first row */
+      grid-gap: 10px;
+      /* Space between images */
+    }
+
+    .gallery-grid img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      /* This will cover the area of the grid item, cropping the image if necessary */
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        /* Adjust the number of columns for smaller screens if needed */
+      }
+    }
+
+    @media (max-width: 480px) {
+      .gallery-grid {
+        grid-template-columns: 1fr;
+        /* Single column layout for very small screens */
+      }
+    }
+
+    /* Testimonials Section styles */
+    .testimonials {
+      background: url('https://res.cloudinary.com/prometheusapi/image/upload/v1703852502/public/vector_2x_bh2cwb.png') no-repeat center;
+      /* path to your stylized shape image */
+      background-size: contain;
+      /* adjust size as needed */
+      text-align: center;
+      background-color: #f8f8f8;
+      /* or any other background color */
+      padding: 2em 0;
+    }
+
+    .testimonials-header h2 {
+      font-size: 2em;
+      color: #333;
+    }
+
+    .testimonials-header p {
+      color: #666;
+    }
+
+    .testimonial-card {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2em;
+    }
+
+
+
+    .testimonial-quote p {
+      font-style: italic;
+      color: #333;
+      max-width: 300px;
+      /* Adjust width as needed */
+    }
+
+
+    .dot {
+      height: 10px;
+      width: 10px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      margin: 0 5px;
+    }
+
+    .dot.active {
+      background-color: #85c340;
+      /* Active dot color */
+    }
+
+    /*Web responsive version*/
+    /* Adjusting the responsive behavior */
+    @media (max-width: 768px) {
+      .testimonial-card {
+        max-width: 100%;
+        /* Allow the card to expand to the full width */
+      }
+
+      .testimonials {
+        display: none;
+      }
+    }
+
+    /* Further adjustments for very small screens */
+    @media (max-width: 480px) {
+      .testimonial-card {
+        padding: 1em;
+        /* Reduce padding on very small screens */
+      }
+
+      .testimonial {
+        flex-direction: column;
+        /* Stack the image and quote on very small screens */
+      }
+
+    }
+
+    .testimonial-quote p {
+      font-style: italic;
+      color: #333;
+      /* You can set a max-width here if necessary, or remove it to allow the text to fill the container */
+      max-width: 100%;
+    }
+
+    /* Adjusting the responsive behavior for smaller screens */
+    @media (max-width: 768px) {
+      .testimonial-quote p {
+        font-size: 1em;
+        /* Smaller font size for readability on small devices */
+        padding: 0 10px;
+        /* Padding to ensure text doesn't touch the edges */
+      }
+    }
+
+    /* Further adjustments for very small screens */
+    @media (max-width: 480px) {
+      .testimonial-quote p {
+        font-size: 0.9em;
+        /* Even smaller font size if necessary */
+        padding: 0 5px;
+        /* Adjust padding as needed */
+      }
+    }
+
+
+    .gallery {
+      text-align: center;
+      padding: 20px;
+      background-color: #f0f0f0;
+    }
+
+    .gallery h2 {
+      margin-bottom: 20px;
+      font-size: 2rem;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      /* Creates a 4-column grid */
+      grid-auto-rows: minmax(100px, auto);
+      /* Sets a minimum row height */
+      gap: 10px;
+    }
+
+    .gallery-item {
+      overflow: hidden;
+      /* Ensures the content does not spill outside the boundary */
+    }
+
+    .gallery-item.large {
+      grid-column: span 2;
+      /* Makes the first item span two columns */
+      grid-row: span 2;
+      /* Makes the first item span two rows */
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      /* Ensures the images cover their containers */
+    }
+
+    @media (max-width: 768px) {
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        /* Adjust to a 2-column grid */
+      }
+
+      .gallery-item.large {
+        grid-column: span 2;
+        /* Maintain spanning in the smaller grid */
+      }
+    }
+
+    @media (max-width: 480px) {
+      .gallery-grid {
+        grid-template-columns: 1fr;
+        /* Single column grid */
+      }
+
+      .gallery-item.large {
+        grid-column: span 1;
+        /* No spanning in a single column layout */
+      }
+    }
+
+    .contact-container {
+      display: flex;
+      justify-content: space-between;
+      /* Aligns children side by side */
+      align-items: stretch;
+      /* Stretches children to fill the height */
+      background-size: cover;
+      padding: 150px;
+      gap: 0;
+      /* Removes any gap between children */
+    }
+
+    .contact-info {
+      background: linear-gradient(222deg, #85C340 0%, #0071BA 100%);
+      color: white;
+      padding: 20px;
+      border-top-left-radius: 8px;
+      /* Rounds top-left corner */
+      border-bottom-left-radius: 8px;
+      /* Rounds bottom-left corner */
+      flex: 1;
+      /* Allows flexible box growth */
+      /* Add more styles for contact info */
+    }
+
+    .contact-form-card {
+      background: #ffffff;
+      padding: 90px 75px;
+      border-top-right-radius: 30px;
+      /* Rounds top-right corner */
+      border-bottom-right-radius: 30px;
+      /* Rounds bottom-right corner */
+      flex: 2;
+      /* Allows double the size of contact-info */
+    }
+
+    .contact-form-card h2 {
+      margin-bottom: 15px;
+      font-size: 40px;
+      font-weight: 600;
+    }
+
+    .contact-form-card p {
+      margin-bottom: 1em;
+      font-size: 21px;
+      font-weight: 400;
+    }
+
+    .form-row {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1em;
+    }
+
+    .form-row input,
+    .contact-form-card textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-left: 10px;
+      /* Spacing for the icon */
+    }
+
+    .contact-form-card textarea {
+      height: 100px;
+      /* Adjust height as necessary */
+    }
+
+    .contact-form-card button {
+      width: 100%;
+      padding: 10px;
+      background-color: #00BFA5;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .contact-container {
+        flex-direction: column;
+        padding: 20px;
+        /* Adjust padding for smaller screens */
+      }
+
+      .contact-info,
+      .contact-form-card {
+        width: 100%;
+        border-radius: 8px;
+        /* Round all corners for mobile */
+        margin-bottom: 10px;
+        /* Adds space between stacked items */
+      }
+
+      .contact-info {
+        order: 2;
+        /* Puts contact info below form on mobile */
+      }
+
+      .contact-form-card {
+        order: 1;
+        /* Puts form above contact info on mobile */
+      }
+    }
+
+    .footer_1 {
+      background-color: #303030;
+      display: flex;
+      justify-content: space-between;
+      padding: 63px 6rem 90px;
+    }
+
+    .footer_1 img {
+      padding-right: 2rem;
+      height: 70px;
+    }
+
+    .footer_heading {
+      color: #85c340;
+      font-size: 21px;
+      font-weight: 600;
+    }
+
+    .footer_text {
+      color: #fff;
+      font-size: 16px;
+      font-weight: 400;
+    }
+
+    .footer_1_section {
+      display: flex;
+    }
+
+    .footer_1_section1_phone {
+      display: flex;
+    }
+
+    .footer_1_section1_phone_title {
+      margin-right: 13px;
+      color: #85c340;
+    }
+
+    .footer_1_section1_phonenumbers {
+      display: flex;
+      flex-direction: column;
+      color: #fff;
+    }
+
+    .footer_1_section1 p {
+      margin: 1rem 0;
+    }
+
+    .footer_1_section2 ul {
+      list-style: none;
+    }
+
+    .footer_1_section2 ul li {
+      margin: 25px 30px 0;
+      color: #fff;
+    }
+
+    .footer_2 {
+      background-color: #3a3c39;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 17px 6rem;
+    }
+
+    .footer_2 p {
+      color: #fff;
+    }
+
+    .footer_2 span {
+      color: #85c340;
+    }
+
+    .footer_2 img {
+      margin: 0 10px;
+    }
+
+    @media (max-width: 1070px) {
+      .footer_1 {
+        flex-direction: column-reverse;
+        gap: 80px;
+        align-items: center;
+        padding: 63px 0rem 90px;
+      }
+    }
+
+    @media (max-width: 687px) {
+      .footer_1_section1 {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .footer_2 {
+        flex-direction: column-reverse;
+        gap: 20px;
+        padding: 17px 0rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .sidebar-toggle-btn {
+        display: block !important;
+      }
+    }
+
+    .sidebar {
+      background-color: #071622;
+      /* Dark blue-grey color */
+      color: white;
+      min-height: 100vh;
+      /* Full height */
+      max-height: 100vh;
+      min-width: 250px;
+      /* Sidebar width */
+      padding: 1rem;
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+      position: fixed;
+      overflow-y: auto;
+      transition: margin-left 0.3s ease;
+      z-index: 2000;
+      margin-left: -250px;
+    }
+
+    .menu-label {
+      padding-left: 1rem;
+      padding-top: 30px;
+      padding-bottom: 2px;
+      color: #9e9e9e;
+      /* Light grey color for the 'Menu' label */
+      font-size: 0.8rem;
+      text-transform: uppercase;
+    }
+
+    .menu-labell {
+      color: #9e9e9e;
+      /* Light grey color for the 'Menu' label */
+      font-size: 0.8rem;
+      text-transform: uppercase;
+    }
+
+    .sidebar .nav-link {
+      color: #b0bec5;
+      /* Grey text for all nav items */
+      font-size: 0.85rem;
+      /* Smaller text size */
+      font-weight: 500;
+    }
+
+    .sidebar .nav-link.active {
+      color: #4caf50;
+      /* Green text for the active item */
+      background-color: rgba(126,
+          135,
+          155,
+          0.13);
+      /* Lighter shade for active items */
+      border-left: 3px solid #4caf50;
+      /* Green left border */
+    }
+
+    .sidebar .nav-link:hover {
+      background-color: #37474f;
+    }
+
+    .sidebar .nav-item {
+      margin-bottom: 5px;
+      /* Space between items */
+    }
+
+    .sidebar .nav-item:last-child {
+      margin-top: auto;
+      /* Push logout to the bottom */
+    }
+
+    .sidebar-icon {
+      width: 20px;
+      /* Icon size */
+      margin-right: 10px;
+      /* Space between icon and text */
+    }
+
+    .sidebar .nav-link span {
+      font-size: 0.85rem;
+      /* Adjust if necessary to fit all items */
+    }
+
+    .app-link {
+      margin-top: auto;
+      padding: 0.5rem;
+      text-align: center;
+    }
+
+    .google-play-btn {
+      background-image: linear-gradient(to right, #85c340, #0071ba);
+      border-radius: 20px;
+      /* Rounded corners */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.25rem 0.75rem;
+      /* Vertical and horizontal padding */
+      text-decoration: none;
+    }
+
+    .google-play-btn img {
+      height: 24px;
+      /* Icon height */
+      margin-right: 0.5rem;
+      /* Space between icon and text */
+    }
+
+    .google-play-btn span {
+      color: white;
+      /* White text color */
+      font-size: 0.7rem;
+      /* Smaller text size */
+      font-weight: 400;
+    }
+
+    .sidebar-reveal {
+      margin-left: 0px;
+    }
+
+    .sidebar-toggle-btn {
+      border: none;
+      display: none;
+      background: #85c340;
+      border-radius: 50%;
+      padding: 5px 12px;
+    }
+  </style>
+
+</head>
+
+<body>
+  <!-- Navigation Bar -->
+  <div class="sidebar d-flex flex-column flex-shrink-0 p-3">
+    <button class="sidebar-toggle-btn" onclick="toggleSidebar()">
+      <img src="images/xmark-solid.svg" alt="" />
+    </button>
+    <a href="/" class="d-block mb-3 mb-md-0 links text-decoration-none">
+    </a>
+    <ul class="nav nav-pills flex-column mb-auto">
+      <li class="nav-item">
+        <a href="/"
+          class="nav-link active d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+          <img src="https://res.cloudinary.com/prometheusapi/image/upload/v1704397145/Home_bv00ja.png"
+            class="sidebar-icon" alt="Home" />
+          <span style="color: #85c340">Home</span>
+        </a>
+      </li>
+      <!-- Add other items here -->
+      <li class="nav-item">
+        <a href="/dashboard"
+          class="nav-link d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+          <img src="https://res.cloudinary.com/prometheusapi/image/upload/v1704456253/Garden_Sprinkler_mds5ds.png"
+            class="sidebar-icon" alt="Home" />
+          <span style="color: #7e879b">Products</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a href="/dashboard"
+          class="nav-link d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+          <img
+            src="https://res.cloudinary.com/prometheusapi/image/upload/v1704457070/4ce2863c40576c0f68a4930d4e690c00_m0fqi7.png"
+            class="sidebar-icon" alt="Home" />
+          <span style="color: #7e879b">Agrodealers</span>
+        </a>
+      </li>
+      <!--insights-->
+      <li class="nav-item">
+        <a href="/dashboard"
+          class="nav-link d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+          <img src="https://res.cloudinary.com/prometheusapi/image/upload/v1704456253/insight_1_o4eyfl.png"
+            class="sidebar-icon" alt="Home" />
+          <span style="color: #7e879b">Insights</span>
+        </a>
+      </li>
+      <!--orders-->
+      <li class="nav-item">
+        <a href="/dashboard"
+          class="nav-link d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+          <img src="https://res.cloudinary.com/prometheusapi/image/upload/v1704456253/Shopping_Cart_op8xvy.png"
+            class="sidebar-icon" alt="Home" />
+          <span style="color: #7e879b">Orders</span>
+        </a>
+      </li>
+    </ul>
+    <!-- Add this below your existing menu items -->
+    <span class="menu-labell">Others</span>
+    <ul class="nav nav-pills flex-column mb-auto">
+      <li class="nav-item">
+        <a href="/settings"
+          class="nav-link d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+          <img src="https://res.cloudinary.com/prometheusapi/image/upload/v1704456254/Settings_bjtcja.png" height="30px"
+            class="sidebar-icon" alt="Settings" />
+          <span style="color: #7e879b">Settings</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="/support"
+          class="nav-link d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+          <img src="https://res.cloudinary.com/prometheusapi/image/upload/v1704456253/Online_Support_q8jfbh.png"
+            height="30px" class="sidebar-icon" alt="Support" />
+          <span style="color: #7e879b">Support</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="/logout"
+          class="nav-link d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+          <img src="https://res.cloudinary.com/prometheusapi/image/upload/v1704456253/Logout_a9pa07.png" height="30px"
+            class="sidebar-icon" alt="Logout" />
+          <span style="color: #7e879b">Logout</span>
+        </a>
+      </li>
+    </ul>
+
+  </div>
+
+  <!-- Navigation bar -->
+  <nav>
+    <button class="sidebar-toggle-btn" onclick="toggleSidebar()">
+      <img src="images/bars-solid.svg" alt="" />
+    </button>
+    <div class="logo">
+      <img src="https://res.cloudinary.com/prometheusapi/image/upload/v1703852496/public/logo-bw_2x_w3karq.png"
+        width="200px" alt="IrriHub Logo">
+    </div>
+    <ul class="nav-links">
+      <li><a href="/" style="color: #85c340; border-bottom: 3px solid #85c340;">Home</a></li>
+      <li><a href="/company">Company</a></li>
+      <li><a href="/products">Products</a></li>
+      <li><a href="/impact">Impact</a></li>
+      <li><a href="/contact">Contact Us</a></li>
+    </ul>
+    {% if user.is_authenticated %}
+    <a href="/dashboard" class="login-btn">Account</a>
+    {% else %}
+    <a href="/login" class="login-btn">Log In</a>
+    {% endif %}
+  </nav>
+
+  <!-- Main Hero Section -->
+  <header class="hero">
+    <h1>Unlocking Africa’s <span class="green-text">Smallholder Farmer’s</span> Productivity Potential</h1>
+    <style>
+      .green-text {
+        color: #85c340;
+        /* Adjust this color to the specific shade of green you want */
+      }
+    </style>
+    <p>Offering a diverse value proposition for an underserved market through irrigation.
+      <br>
+      Let’s work together to scale climate action
+    </p>
+    <div class="cta-buttons">
+      <button>Be our Partner</button>
+      <button>Be our Field agent</button>
+      <button>Be a smart farmer</button>
+    </div>
+  </header>
+  <!-- What We Do Section -->
+  <section class="what-we-do">
+    <div class="content">
+      <h2>Welcome To Irri-Hub Ke</h2>
+      <h3 style="color: #85c340;">What We Do?</h3>
+      <p>Irri-Hub Ke is building a resilient farming community through smart irrigation Alongside an ecosystem of
+        partners, Irri-Hub Ke equips every farmer with the right tools to increase their yields, while securing
+        additional income.</p>
+      <button class="learn-more-btn">Learn More</button>
+    </div>
+    <div class="image-frame">
+      <img src="https://res.cloudinary.com/prometheusapi/image/upload/v1703852500/public/group-32_2x_cnb2aw.png"
+        width="500px" height="600px" alt="Irri-Hub Ke Member">
+    </div>
+  </section>
+  <!-- Services Section -->
+  <section class="services">
+    <div class="partners">
+      <!-- Partner logos go here -->
+      <!-- Example: -->
+      <img src="https://res.cloudinary.com/prometheusapi/image/upload/v1703852498/public/kcic_2x_wrzxlq.png"
+        alt="Partner Logo 1" class="partner-logo">
+      <img src="https://res.cloudinary.com/prometheusapi/image/upload/v1703852496/public/afdb_2x_tkiiwd.png"
+        alt="Partner Logo 2" class="partner-logo">
+      <img src="https://res.cloudinary.com/prometheusapi/image/upload/v1703852497/public/global-center_2x_suy1it.png"
+        alt="Partner Logo 3" class="partner-logo">
+      <img src="https://res.cloudinary.com/prometheusapi/image/upload/v1703852496/public/clim_2x_q1gxa9.png"
+        alt="Partner Logo 4" class="partner-logo">
+      <img src="https://res.cloudinary.com/prometheusapi/image/upload/v1703852498/public/opes-fund_2x_p4wi25.png"
+        alt="Partner Logo 5" class="partner-logo">
+      <img src="https://res.cloudinary.com/prometheusapi/image/upload/v1703852501/public/stanbic_2x_qllwgr.png"
+        alt="Partner Logo 6" class="partner-logo">
+      <img src="https://res.cloudinary.com/prometheusapi/image/upload/v1703852497/public/off-grid_2x_sljfwf.png"
+        alt="Partner Logo 7" class="partner-logo">
+      <img src="https://res.cloudinary.com/prometheusapi/image/upload/v1703852497/public/miler_2x_onfvlz.png"
+        alt="Partner Logo 8" class="partner-logo">
+      <img src="https://res.cloudinary.com/prometheusapi/image/upload/v1703852497/public/euro_2x_lrloat.png"
+        alt="Partner Logo 9" class="partner-logo">
+      <!-- Add additional logos as necessary -->
+    </div>
+    <div class="services-content">
+      <div class="illustration">
+        <img src="https://res.cloudinary.com/prometheusapi/image/upload/v1703852497/public/artboard-44x-1_2x_hx2wyi.png"
+          alt="Greenhouse Farming">
+      </div>
+      <div class="text-content">
+        <h2 style="color: black;">Revolutionize Farming with Our Customized <span class="highlight">Climate Smart
+            solutions for Better Yields</span></h2>
+        <p>Unlocking Africa's smallholder farmers' productivity potential through smart irrigation. Irri-Hub Ke is
+          dedicated to building a resilient farming community and equipping every farmer with the right tools to
+          increase their yields and secure additional income. Join us in scaling climate action and revolutionizing
+          farming for better yields.</p>
+      </div>
+    </div>
+  </section>
+  <!-- Testimonials Section -->
+  <section class="testimonials">
+    <div class="testimonials-header">
+      <h2>Farmers across the country <span style="color: #85c340;">love our products</span></h2>
+      <p>Read some of our success stories to find out why we are the best fit for you</p>
+    </div>
+    <div class="testimonial-card">
+      <img src="https://res.cloudinary.com/prometheusapi/image/upload/v1703852498/public/group-25_2x_r9ldxp.png"
+        width="800px" height="500px" alt="Farmer" class="testimonial-image">
+      <div class="testimonial-quote">
+        <p>
+          We have been able to increase our yields by 30% <br> and we are now able to feed our family and sell the
+          surplus to the market. <br> We are now able to pay school fees for our children and we are very grateful to
+          Irri-Hub Ke for the support.
+        </p>
+      </div>
+    </div>
+    <div class="testimonial-navigation">
+      <span class="dot active"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+  </section>
+  <section class="gallery">
+    <h2>Our Amazing <span style="color: #85c340;">Gallery</span></h2>
+    <div class="gallery-grid">
+      <div class="gallery-item large"><img
+          src="https://res.cloudinary.com/prometheusapi/image/upload/v1703874760/public/Rectangle_15_sik5ty.png"
+          alt="Gallery Image"></div>
+      <div class="gallery-item"><img
+          src="https://res.cloudinary.com/prometheusapi/image/upload/v1703874759/public/Rectangle_15_1_tjjuww.png"
+          alt="Gallery Image"></div>
+      <div class="gallery-item"><img
+          src="https://res.cloudinary.com/prometheusapi/image/upload/v1703874759/public/Rectangle_17_o3mw8f.png"
+          alt="Gallery Image"></div>
+      <div class="gallery-item"><img
+          src="https://res.cloudinary.com/prometheusapi/image/upload/v1703852502/public/rectangle-16_2x_m5uf69.png"
+          alt="Gallery Image"></div>
+      <div class="gallery-item"><img
+          src="https://res.cloudinary.com/prometheusapi/image/upload/v1703852505/public/37944-1_2x_g0mrmx.png"
+          alt="Gallery Image"></div>
+      <div class="gallery-item"><img
+          src="https://res.cloudinary.com/prometheusapi/image/upload/v1703852502/public/rectangle-16_2x_m5uf69.png"
+          alt="Gallery Image"></div>
+      <div class="gallery-item"><img
+          src="https://res.cloudinary.com/prometheusapi/image/upload/v1703852505/public/37944-1_2x_g0mrmx.png"
+          alt="Gallery Image"></div>
+      <div class="gallery-item"><img
+          src="https://res.cloudinary.com/prometheusapi/image/upload/v1703852502/public/rectangle-16_2x_m5uf69.png"
+          alt="Gallery Image"></div>
+      <div class="gallery-item"><img
+          src="https://res.cloudinary.com/prometheusapi/image/upload/v1703852505/public/37944-1_2x_g0mrmx.png"
+          alt="Gallery Image"></div>
+    </div>
+  </section>
+  <div class="contact-container"
+    style="background-image: url('https://res.cloudinary.com/prometheusapi/image/upload/v1703876537/public/37944_1_kzch9t.png');">
+    <aside class="contact-info">
+      <h3>Visit Us</h3>
+      <br>
+      <p>Kilimani, Ngong Road Next to China Driving School</p>
+      <br>
+      <p>Phone: +254 710 123 456 / +254 732 123 456</p>
+      <br>
+      <p>Email: info@irrihub.com</p>
+      <br>
+      <p>Open Hours</p>
+      <p>Mon - Fri 9 am - 4:30 pm</p>
+      <p>Saturday & Sunday: CLOSED</p>
+      <br>
+      <div class="social-icons">
+        <!-- Example: -->
+        <a href="#"><img
+            src="https://res.cloudinary.com/prometheusapi/image/upload/v1703852497/public/facebook-circled_2x_pz4mf2.png"
+            alt="Facebook"></a>
+        <a href="#"><img
+            src="https://res.cloudinary.com/prometheusapi/image/upload/v1703852501/public/twitterx_2x_mfkuvp.png"
+            alt="Twitter"></a>
+        <a href="#"><img
+            src="https://res.cloudinary.com/prometheusapi/image/upload/v1703852496/public/linkedin_2x_gn5ifn.png"
+            alt="LinkedIn"></a>
+      </div>
+    </aside>
+
+    <div class="contact-form-card">
+      <h2>Get in Touch</h2>
+      <p>Do you have any queries?</p>
+
+      <form id="contact-form" method="post" action="{% url 'home' %}">
+        {% csrf_token %}
+        <div class="form-row">
+          <input type="text" id="first-name" name="first_name" placeholder="John" />
+          <input type="text" id="last-name" name="last_name" placeholder="Last Name" />
+        </div>
+        <div class="form-row">
+          <span class="icon email-icon"></span>
+          <input type="email" id="email" name="email" placeholder="Email" />
+        </div>
+        <div class="form-row">
+          <span class="icon phone-icon"></span>
+          <input type="tel" id="phone" name="phone" placeholder="Phone Number" />
+        </div>
+        <textarea id="message" name="message" placeholder="Type your message here"></textarea>
+        <button type="submit">Get in Touch</button>
+      </form>
+    </div>
+  </div>
+  </div>
+
+  <footer class="footer">
+    <section class="footer_1">
+      <div class="footer_1_section footer_1_section1">
+        <img src="images/logo_colored.png" alt="" />
+        <div>
+          <p class="footer_heading">Get in touch</p>
+          <p class="footer_text">
+            Kilimani - Ndemi Road - <br />Next to Dima Driving School
+          </p>
+          <div class="footer_1_section1_phone">
+            <span class="footer_1_section1_phone_title">Phone:</span>
+            <div class="footer_1_section1_phonenumbers">
+              <span>+254 732 957 984 /</span>
+              <span>+254 112 148 880</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer_1_section footer_1_section2">
+        <ul>
+          <li>Company</li>
+          <li>Products</li>
+          <li>Impact</li>
+          <li>Contact Us</li>
+        </ul>
+        <ul>
+          <li>Climate Smart Drip Kits</li>
+          <li>Drip button systems</li>
+          <li>Dam Liners</li>
+          <li>Mulching technology</li>
+          <li>Greenhouses</li>
+        </ul>
+      </div>
+    </section>
+    <section class="footer_2">
+      <p>2023 &copy All rights reserved by <span>Irri-hub Ke</span></p>
+      <div>
+        <img src="images/Twitter_Circled.png" alt="" />
+        <img src="images/Instagram_Circle.png" alt="" />
+        <img src="images/Facebook.png" alt="" />
+      </div>
+    </section>
+  </footer>
+  <script>
+    function toggleSidebar() {
+      var sidebar = document.querySelector(".sidebar");
+      sidebar.classList.toggle("sidebar-reveal");
+    }
+  </script>
+
+</body>
+
+</html>
