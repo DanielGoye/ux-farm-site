@@ -1,4 +1,4 @@
-<!-- {% load static %} -->
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -1076,11 +1076,11 @@
       <li><a href="/impact">Impact</a></li>
       <li><a href="/contact">Contact Us</a></li>
     </ul>
-    <!-- {% if user.is_authenticated %}
+    {% if user.is_authenticated %}
     <a href="/dashboard" class="login-btn">Account</a>
-    {% else %} -->
+    {% else %}
     <a href="/login" class="login-btn">Log In</a>
-    <!-- {% endif %} -->
+    {% endif %}
   </nav>
 
   <!-- Main Hero Section -->
@@ -1241,7 +1241,7 @@
       <p>Do you have any queries?</p>
 
       <form id="contact-form" method="post" action="{% url 'home' %}">
-        <!-- {% csrf_token %} -->
+        {% csrf_token %}
         <div class="form-row">
           <input type="text" id="first-name" name="first_name" placeholder="John" />
           <input type="text" id="last-name" name="last_name" placeholder="Last Name" />
