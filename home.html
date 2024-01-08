@@ -1,4 +1,4 @@
-{% load static %}
+<!-- {% load static %} -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,6 +13,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
     rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <style>
     /* Base styles */
@@ -159,8 +160,9 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 10px 100px;
+      padding: 5rem 9rem;
       background: #F3F9EC;
+      gap: 80px;
       /* White background */
     }
 
@@ -171,6 +173,7 @@
 
     .what-we-do h2 {
       font-size: 2.5em;
+      font-weight: 800;
       color: #000;
       /* Black color text */
       margin-bottom: 0.5em;
@@ -178,6 +181,7 @@
 
     .what-we-do h3 {
       font-size: 2em;
+      font-weight: 800;
       color: #000;
       margin-bottom: 1em;
     }
@@ -197,15 +201,26 @@
       border-radius: 20px;
       cursor: pointer;
       font-weight: bold;
+      color: #fff;
     }
 
-    .image-frame {
-      /* Adjust the CSS below based on the actual image and overlay shapes */
-
+    .image-frame img {
+      width: 30rem;
     }
 
-    /* Responsive design adjustments for this section */
-    @media (max-width: 768px) {
+    @media (max-width: 1160px) {
+      .image-frame img {
+        width: 25rem;
+      }
+    }
+
+    @media (max-width: 1050px) {
+      .image-frame img {
+        width: 20rem;
+      }
+    }
+
+    @media (max-width: 955px) {
       .what-we-do {
         flex-direction: column;
         padding: 50px 20px;
@@ -215,7 +230,21 @@
         max-width: 100%;
       }
 
+      .image-frame img {
+        width: 30rem;
+      }
+    }
 
+    /* Responsive design adjustments for this section */
+    @media (max-width: 768px) {
+      .image-frame img {
+        width: 30rem;
+      }
+    }
+    @media (max-width: 560px) {
+      .image-frame img {
+        width: 100%;
+      }
     }
 
     /* Services Section styles */
@@ -609,11 +638,11 @@
       display: flex;
       align-items: center;
       margin-bottom: 40px;
+      justify-content: space-between;
     }
 
     .form-row input,
     .contact-form-card textarea {
-      width: 100%;
       padding: 10px;
       border: 1px solid #ccc;
       border-radius: 5px;
@@ -623,12 +652,19 @@
       outline: none;
     }
 
-    .form-row input:focus {
-      border-color: #85C340;
+    #first-name,
+    #last-name {
+      width: 48%;
     }
 
-    #first-name {
-      margin-right: 20px;
+    #email,
+    #phone,
+    #message {
+      width: 100%;
+    }
+
+    .form-row input:focus {
+      border-color: #85C340;
     }
 
     .contact-form-card textarea {
@@ -924,6 +960,11 @@
       background: #85c340;
       border-radius: 50%;
       padding: 5px 12px;
+      align-self: flex-end;
+    }
+
+    .toggle-bars {
+      align-self: center;
     }
   </style>
 
@@ -936,6 +977,10 @@
       <img src="images/xmark-solid.svg" alt="" />
     </button>
     <a href="/" class="d-block mb-3 mb-md-0 links text-decoration-none">
+      <!-- Logo here -->
+      <div class="text-center">
+        <img src="https://irri-hub.com/wp-content/uploads/2022/04/irrihub.png" width="150px" alt="Logo" />
+      </div>
     </a>
     <ul class="nav nav-pills flex-column mb-auto">
       <li class="nav-item">
@@ -1017,7 +1062,7 @@
 
   <!-- Navigation bar -->
   <nav>
-    <button class="sidebar-toggle-btn" onclick="toggleSidebar()">
+    <button class="sidebar-toggle-btn toggle-bars" onclick="toggleSidebar()">
       <img src="images/bars-solid.svg" alt="" />
     </button>
     <div class="logo">
@@ -1031,11 +1076,11 @@
       <li><a href="/impact">Impact</a></li>
       <li><a href="/contact">Contact Us</a></li>
     </ul>
-    {% if user.is_authenticated %}
+    <!-- {% if user.is_authenticated %}
     <a href="/dashboard" class="login-btn">Account</a>
-    {% else %}
+    {% else %} -->
     <a href="/login" class="login-btn">Log In</a>
-    {% endif %}
+    <!-- {% endif %} -->
   </nav>
 
   <!-- Main Hero Section -->
@@ -1068,8 +1113,7 @@
       <button class="learn-more-btn">Learn More</button>
     </div>
     <div class="image-frame">
-      <img src="https://res.cloudinary.com/prometheusapi/image/upload/v1703852500/public/group-32_2x_cnb2aw.png"
-        width="500px" height="600px" alt="Irri-Hub Ke Member">
+      <img src="https://res.cloudinary.com/dhb2zvszq/image/upload/v1704722456/group-32_2x_cnb2aw_csjvha.png" alt="Irri-Hub Ke Member">
     </div>
   </section>
   <!-- Services Section -->
@@ -1197,7 +1241,7 @@
       <p>Do you have any queries?</p>
 
       <form id="contact-form" method="post" action="{% url 'home' %}">
-        {% csrf_token %}
+        <!-- {% csrf_token %} -->
         <div class="form-row">
           <input type="text" id="first-name" name="first_name" placeholder="John" />
           <input type="text" id="last-name" name="last_name" placeholder="Last Name" />
