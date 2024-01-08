@@ -9,6 +9,10 @@
   <link rel="icon" href="https://irri-hub.com/wp-content/uploads/2022/05/favic-150x150.png" sizes="32x32" />
   <link rel="icon" href="https://irri-hub.com/wp-content/uploads/2022/05/favic.png" sizes="192x192" />
   <link rel="apple-touch-icon" href="https://irri-hub.com/wp-content/uploads/2022/05/favic.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <style>
     /* Base styles */
@@ -16,7 +20,7 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Arial', sans-serif;
+      font-family: 'Montserrat', sans-serif;
       /* Replace with the specific font you're using */
     }
 
@@ -473,7 +477,7 @@
 
     .gallery {
       text-align: center;
-      padding: 20px;
+      padding: 80px 110px;
       background-color: #f0f0f0;
     }
 
@@ -488,7 +492,7 @@
       /* Creates a 4-column grid */
       grid-auto-rows: minmax(100px, auto);
       /* Sets a minimum row height */
-      gap: 10px;
+      gap: 25px;
     }
 
     .gallery-item {
@@ -508,6 +512,7 @@
       height: 100%;
       object-fit: cover;
       /* Ensures the images cover their containers */
+      border-radius: 20px;
     }
 
     @media (max-width: 768px) {
@@ -541,22 +546,36 @@
       align-items: stretch;
       /* Stretches children to fill the height */
       background-size: cover;
-      padding: 150px;
+      padding: 128px 145px;
       gap: 0;
       /* Removes any gap between children */
+      background-image: url("https://res.cloudinary.com/prometheusapi/image/upload/v1703876537/public/37944_1_kzch9t.png");
     }
 
     .contact-info {
-      background: linear-gradient(222deg, #85C340 0%, #0071BA 100%);
+      background: linear-gradient(222deg, #85c340 0%, #0071ba 100%);
       color: white;
-      padding: 20px;
-      border-top-left-radius: 8px;
+      padding: 280px 80px 80px 62px;
+      border-top-left-radius: 30px;
       /* Rounds top-left corner */
-      border-bottom-left-radius: 8px;
+      border-bottom-left-radius: 30px;
       /* Rounds bottom-left corner */
       flex: 1;
       /* Allows flexible box growth */
       /* Add more styles for contact info */
+    }
+
+    .contact-info h2 {
+      margin: 40px 0;
+    }
+
+    .contact-info p {
+      font-weight: 300;
+      margin: 20px 0;
+    }
+
+    .social-icons {
+      margin-top: 4rem;
     }
 
     .contact-form-card {
@@ -582,10 +601,14 @@
       font-weight: 400;
     }
 
+    #contact-form {
+      margin-top: 60px;
+    }
+
     .form-row {
       display: flex;
       align-items: center;
-      margin-bottom: 1em;
+      margin-bottom: 40px;
     }
 
     .form-row input,
@@ -594,8 +617,18 @@
       padding: 10px;
       border: 1px solid #ccc;
       border-radius: 5px;
-      margin-left: 10px;
-      /* Spacing for the icon */
+      height: 60px;
+      background-color: rgba(133, 195, 64, 0.1);
+      transition: border-color 0.3s ease;
+      outline: none;
+    }
+
+    .form-row input:focus {
+      border-color: #85C340;
+    }
+
+    #first-name {
+      margin-right: 20px;
     }
 
     .contact-form-card textarea {
@@ -605,12 +638,14 @@
 
     .contact-form-card button {
       width: 100%;
-      padding: 10px;
-      background-color: #00BFA5;
+      padding: 24px 0;
+      margin-top: 5rem;
+      background-color: #293a56;
       color: white;
       border: none;
       border-radius: 5px;
       cursor: pointer;
+      font-size: 19px;
     }
 
     @media (max-width: 768px) {
@@ -629,14 +664,36 @@
         /* Adds space between stacked items */
       }
 
+      .contact-form-card {
+        padding: 60px 75px;
+
+      }
+
       .contact-info {
         order: 2;
         /* Puts contact info below form on mobile */
+        padding: 80px 80px 80px 62px;
       }
 
       .contact-form-card {
         order: 1;
         /* Puts form above contact info on mobile */
+      }
+
+      .form-row input,
+      .contact-form-card textarea {
+        height: 50px;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .contact-form-card {
+        padding: 60px 40px;
+      }
+
+      .contact-info {
+        order: 2;
+        padding: 50px 42px;
       }
     }
 
@@ -656,12 +713,14 @@
       color: #85c340;
       font-size: 21px;
       font-weight: 600;
+      margin: 1em 0;
     }
 
     .footer_text {
       color: #fff;
       font-size: 16px;
       font-weight: 400;
+      margin: 1em 0;
     }
 
     .footer_1_section {
@@ -681,10 +740,6 @@
       display: flex;
       flex-direction: column;
       color: #fff;
-    }
-
-    .footer_1_section1 p {
-      margin: 1rem 0;
     }
 
     .footer_1_section2 ul {
@@ -1116,17 +1171,13 @@
     style="background-image: url('https://res.cloudinary.com/prometheusapi/image/upload/v1703876537/public/37944_1_kzch9t.png');">
     <aside class="contact-info">
       <h3>Visit Us</h3>
-      <br>
       <p>Kilimani, Ngong Road Next to China Driving School</p>
-      <br>
       <p>Phone: +254 710 123 456 / +254 732 123 456</p>
-      <br>
       <p>Email: info@irrihub.com</p>
-      <br>
-      <p>Open Hours</p>
+      <br><br>
+      <h3>Open Hours</h3>
       <p>Mon - Fri 9 am - 4:30 pm</p>
       <p>Saturday & Sunday: CLOSED</p>
-      <br>
       <div class="social-icons">
         <!-- Example: -->
         <a href="#"><img
