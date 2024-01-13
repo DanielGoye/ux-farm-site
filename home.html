@@ -24,6 +24,10 @@
       font-family: 'Montserrat', sans-serif;
       /* Replace with the specific font you're using */
     }
+
+    /* body {
+      background-color: #f0f0f0;
+    } */
     /* Navigation bar styles */
     nav {
       display: flex;
@@ -77,7 +81,7 @@
       background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
       url("{% static 'images/rectangle-1@2x.png' %}") no-repeat center center/cover;
       /* background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-      url("../static/images/rectangle-1@2x.png") no-repeat center center/cover; */
+        url("../static/images/rectangle-1@2x.png") no-repeat center center/cover; */
       color: white;
       text-align: center;
       padding: 250px 20px;
@@ -1109,8 +1113,7 @@
     <div class="image-frame">
       <img src="{% static 'images/group-32_2x_cnb2aw.png' %}"
         alt="Irri-Hub Ke Member">
-      <!-- <img src="../static/images/group-32_2x_cnb2aw.png"
-        alt="Irri-Hub Ke Member"> -->
+      <!-- <img src="../static/images/group-32_2x_cnb2aw.png" alt="Irri-Hub Ke Member"> -->
     </div>
   </section>
   <!-- Services Section -->
@@ -1196,8 +1199,9 @@
       <div class="carousel-inner">
         <div class="carousel-item active">
           <div class="carousel-background">
-            <img src="{% static 'images/4876542 2.png' %}" alt="Value Pack Background">
-            <!-- <img src="../static/images/4876542 2.png" alt="Value Pack Background"> -->
+            <img src="{% static 'images/4876542 2.png' %}" alt="Value Pack Background" class="desktop_img">
+            <!-- <img src="../static/images/4876542 2.png" alt="Value Pack Background" class="desktop_img"> -->
+            <img src="https://res.cloudinary.com/dhb2zvszq/image/upload/v1705174304/onions_q7zeyv.png" alt="Value Pack Background" class="mobile_img">
           </div>
           <div class="carousel-caption text-left">
             <h3>Onion Value Pack</h3>
@@ -1209,8 +1213,9 @@
         <!-- Additional carousel items... -->
         <div class="carousel-item">
           <div class="carousel-background">
-            <img src="{% static 'images/4876542 3.png' %}" alt="Value Pack Background">
-            <!-- <img src="../static/images/4876542 3.png" alt="Value Pack Background"> -->
+            <img src="{% static 'images/4876542 3.png' %}" alt="Value Pack Background" class="desktop_img">
+            <!-- <img src="../static/images/4876542 3.png" alt="Value Pack Background" class="desktop_img"> -->
+            <img src="https://res.cloudinary.com/dhb2zvszq/image/upload/v1705174355/avocados_ksd1ky.png" alt="Value Pack Background" class="mobile_img">
           </div>
           <div class="carousel-caption text-left">
             <h3>Avocado Value Pack</h3>
@@ -1258,6 +1263,10 @@
       border-color: #85c340;
     }
 
+    .mobile_img {
+      display: none;
+    }
+
     .value-packs-carousel .carousel-control-prev-icon,
     .value-packs-carousel .carousel-control-next-icon {
       filter: invert(100%);
@@ -1265,10 +1274,18 @@
 
     /* Adjustments for mobile responsiveness */
     @media (max-width: 768px) {
+      .desktop_img {
+        display: none;
+      }
+
+      .mobile_img {
+        display: block;
+      }
+
       .value-packs-carousel .carousel-caption {
         left: 5%;
         right: 5%;
-        bottom: 15%;
+        bottom: 5%;
         text-align: center;
         /* Center align the text for mobile */
       }
@@ -1301,10 +1318,21 @@
         /* Ensure the image covers the area properly */
       }
     }
+
+    @media (max-height: 890px) {
+      .value-packs-carousel .carousel-background img {
+        height: 65vh;
+      }
+    }
+    @media (max-height: 690px) {
+      .value-packs-carousel .carousel-background img {
+        height: 95vh;
+      }
+    }
   </style>
   <script>
     $('#valuePacksCarousel').carousel({
-      interval: 5000 
+      interval: 5000
     })
   </script>
   <section class="gallery">
@@ -1319,7 +1347,8 @@
           display: none;
           /* Hide the grid on small devices */
         }
-        .gallery { 
+
+        .gallery {
           padding: 80px 32px 0px;
           background-color: #fff;
         }
