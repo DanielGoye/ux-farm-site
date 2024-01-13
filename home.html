@@ -24,7 +24,6 @@
       font-family: 'Montserrat', sans-serif;
       /* Replace with the specific font you're using */
     }
-
     /* Navigation bar styles */
     nav {
       display: flex;
@@ -77,11 +76,13 @@
       position: relative;
       background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
       url("{% static 'images/rectangle-1@2x.png' %}") no-repeat center center/cover;
+      /* background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url("../static/images/rectangle-1@2x.png") no-repeat center center/cover; */
       color: white;
       text-align: center;
       padding: 250px 20px;
       /* Adjust padding as needed */
-      min-height: 100vh;
+      min-height: 50vh;
       /* Minimum height to fill the viewport */
     }
 
@@ -241,6 +242,7 @@
         width: 30rem;
       }
     }
+
     @media (max-width: 560px) {
       .image-frame img {
         width: 100%;
@@ -295,7 +297,10 @@
     }
 
     .text-content h2 {
-      font-size: 1.8em;
+      font-size: 45px;
+      font-weight: 800;
+      color: black;
+      font-family: Montserrat;
       /* Adjust according to your design */
       color: #333;
       margin-bottom: 1rem;
@@ -335,6 +340,13 @@
       .text-content {
         order: 2;
         /* Text content comes after the illustration */
+      }
+
+      .text-content h2 {
+        font-size: 45px;
+        font-weight: 600;
+        color: black;
+        font-family: Montserrat;
       }
     }
 
@@ -575,17 +587,18 @@
       align-items: stretch;
       /* Stretches children to fill the height */
       background-size: cover;
-      padding: 128px 145px;
+      padding: 120px 120px;
       gap: 0;
       /* Removes any gap between children */
       background-image: url("https://res.cloudinary.com/prometheusapi/image/upload/v1703876537/public/37944_1_kzch9t.png");
     }
 
     .contact-info {
+      padding-top: 20px;
       background: linear-gradient(222deg, #85c340 0%, #0071ba 100%);
       color: white;
-      padding: 280px 80px 80px 62px;
-      border-top-left-radius: 30px;
+      padding: 80px 40px 80px 62px;
+      border-top-left-radius: 20px;
       /* Rounds top-left corner */
       border-bottom-left-radius: 30px;
       /* Rounds bottom-left corner */
@@ -687,7 +700,7 @@
     @media (max-width: 768px) {
       .contact-container {
         flex-direction: column;
-        padding: 20px;
+        padding: 100px 20px;
         /* Adjust padding for smaller screens */
       }
 
@@ -737,7 +750,7 @@
       background-color: #303030;
       display: flex;
       justify-content: space-between;
-      padding: 63px 6rem 90px;
+      padding: 23px 6rem 40px;
     }
 
     .footer_1 img {
@@ -974,7 +987,8 @@
   <!-- Navigation Bar -->
   <div class="sidebar d-flex flex-column flex-shrink-0 p-3">
     <button class="sidebar-toggle-btn" onclick="toggleSidebar()">
-      <img src="images/xmark-solid.svg" alt="" />
+      <img src="{% static 'images/xmark-solid.svg' %}" alt="" />
+      <!-- <img src="../static/images/xmark-solid.svg" alt="" /> -->
     </button>
     <a href="/" class="d-block mb-3 mb-md-0 links text-decoration-none">
       <!-- Logo here -->
@@ -984,7 +998,7 @@
     </a>
     <ul class="nav nav-pills flex-column mb-auto">
       <li class="nav-item">
-        <a href="/"
+        <a href="#"
           class="nav-link active d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
           <img src="https://res.cloudinary.com/prometheusapi/image/upload/v1704397145/Home_bv00ja.png"
             class="sidebar-icon" alt="Home" />
@@ -993,82 +1007,62 @@
       </li>
       <!-- Add other items here -->
       <li class="nav-item">
-        <a href="/dashboard"
+        <a href="/company"
           class="nav-link d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
           <img src="https://res.cloudinary.com/prometheusapi/image/upload/v1704456253/Garden_Sprinkler_mds5ds.png"
             class="sidebar-icon" alt="Home" />
-          <span style="color: #7e879b">Products</span>
+          <span style="color: #7e879b">Company</span>
         </a>
       </li>
 
       <li class="nav-item">
-        <a href="/dashboard"
+        <a href="/products"
           class="nav-link d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
           <img
             src="https://res.cloudinary.com/prometheusapi/image/upload/v1704457070/4ce2863c40576c0f68a4930d4e690c00_m0fqi7.png"
             class="sidebar-icon" alt="Home" />
-          <span style="color: #7e879b">Agrodealers</span>
+          <span style="color: #7e879b">Products</span>
         </a>
       </li>
       <!--insights-->
       <li class="nav-item">
-        <a href="/dashboard"
+        <a href="/impact"
           class="nav-link d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
           <img src="https://res.cloudinary.com/prometheusapi/image/upload/v1704456253/insight_1_o4eyfl.png"
             class="sidebar-icon" alt="Home" />
-          <span style="color: #7e879b">Insights</span>
+          <span style="color: #7e879b">Impact</span>
         </a>
       </li>
       <!--orders-->
       <li class="nav-item">
-        <a href="/dashboard"
+        <a href="/contact"
           class="nav-link d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
           <img src="https://res.cloudinary.com/prometheusapi/image/upload/v1704456253/Shopping_Cart_op8xvy.png"
             class="sidebar-icon" alt="Home" />
-          <span style="color: #7e879b">Orders</span>
+          <span style="color: #7e879b">Contact</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="/login"
+          class="nav-link d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+          <img src="https://res.cloudinary.com/prometheusapi/image/upload/v1704456253/Shopping_Cart_op8xvy.png"
+            class="sidebar-icon" alt="Home" />
+          <span style="color: #7e879b">Login</span>
         </a>
       </li>
     </ul>
-    <!-- Add this below your existing menu items -->
-    <span class="menu-labell">Others</span>
-    <ul class="nav nav-pills flex-column mb-auto">
-      <li class="nav-item">
-        <a href="/settings"
-          class="nav-link d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-          <img src="https://res.cloudinary.com/prometheusapi/image/upload/v1704456254/Settings_bjtcja.png" height="30px"
-            class="sidebar-icon" alt="Settings" />
-          <span style="color: #7e879b">Settings</span>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a href="/support"
-          class="nav-link d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-          <img src="https://res.cloudinary.com/prometheusapi/image/upload/v1704456253/Online_Support_q8jfbh.png"
-            height="30px" class="sidebar-icon" alt="Support" />
-          <span style="color: #7e879b">Support</span>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a href="/logout"
-          class="nav-link d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-          <img src="https://res.cloudinary.com/prometheusapi/image/upload/v1704456253/Logout_a9pa07.png" height="30px"
-            class="sidebar-icon" alt="Logout" />
-          <span style="color: #7e879b">Logout</span>
-        </a>
-      </li>
-    </ul>
-
   </div>
 
   <!-- Navigation bar -->
   <nav>
-    <button class="sidebar-toggle-btn toggle-bars" onclick="toggleSidebar()">
-      <img src="images/bars-solid.svg" alt="" />
-    </button>
     <div class="logo">
       <img src="https://res.cloudinary.com/prometheusapi/image/upload/v1703852496/public/logo-bw_2x_w3karq.png"
         width="200px" alt="IrriHub Logo">
     </div>
+    <button class="sidebar-toggle-btn toggle-bars" onclick="toggleSidebar()">
+      <img src="{% static 'images/bars-solid.svg' %}" alt="" />
+      <!-- <img src="../static/images/bars-solid.svg" alt="" /> -->
+    </button>
     <ul class="nav-links">
       <li><a href="/" style="color: #85c340; border-bottom: 3px solid #85c340;">Home</a></li>
       <li><a href="/company">Company</a></li>
@@ -1085,7 +1079,7 @@
 
   <!-- Main Hero Section -->
   <header class="hero">
-    <h1>Unlocking Africa’s <span class="green-text">Smallholder Farmer’s</span> Productivity Potential</h1>
+    <h1>Unlocking Africa’s <span class="green-text">Smallholder Farmer’s</span> <br> Productivity Potential</h1>
     <style>
       .green-text {
         color: #85c340;
@@ -1097,23 +1091,26 @@
       Let’s work together to scale climate action
     </p>
     <div class="cta-buttons">
-      <button>Be our Partner</button>
-      <button>Be our Field agent</button>
-      <button>Be a smart farmer</button>
+      <button onclick="window.location.href='/contact'">Be our Partner</button>
+      <button onclick="window.location.href='/contact'">Be our Field agent</button>
+      <button onclick="window.location.href='/signup'">Be a smart farmer</button>
     </div>
   </header>
   <!-- What We Do Section -->
   <section class="what-we-do">
     <div class="content">
-      <h2>Welcome To Irri-Hub Ke</h2>
-      <h3 style="color: #85c340;">What We Do?</h3>
+      <h2 style="font-size: 45px;font-weight: 800;font-family: Montserrat;">Welcome To Irri-Hub Ke</h2>
+      <h3 style="color: #85c340;font-size: 45px;font-weight: 800;font-family: Montserrat;">What We Do?</h3>
       <p>Irri-Hub Ke is building a resilient farming community through smart irrigation Alongside an ecosystem of
         partners, Irri-Hub Ke equips every farmer with the right tools to increase their yields, while securing
         additional income.</p>
       <button class="learn-more-btn">Learn More</button>
     </div>
     <div class="image-frame">
-      <img src="https://res.cloudinary.com/dhb2zvszq/image/upload/v1704722456/group-32_2x_cnb2aw_csjvha.png" alt="Irri-Hub Ke Member">
+      <img src="{% static 'images/group-32_2x_cnb2aw.png' %}"
+        alt="Irri-Hub Ke Member">
+      <!-- <img src="../static/images/group-32_2x_cnb2aw.png"
+        alt="Irri-Hub Ke Member"> -->
     </div>
   </section>
   <!-- Services Section -->
@@ -1143,13 +1140,14 @@
     </div>
     <div class="services-content">
       <div class="illustration">
-        <img src="https://res.cloudinary.com/prometheusapi/image/upload/v1703852497/public/artboard-44x-1_2x_hx2wyi.png"
+        <img src="https://res.cloudinary.com/prometheusapi/image/upload/v1705000919/Artboard_4_2x_1_hfsop3.png"
           alt="Greenhouse Farming">
       </div>
       <div class="text-content">
-        <h2 style="color: black;">Revolutionize Farming with Our Customized <span class="highlight">Climate Smart
+        <h2>Revolutionize Farming with Our Customized <span class="highlight" style="color: #85c340;">Climate Smart
             solutions for Better Yields</span></h2>
-        <p>Unlocking Africa's smallholder farmers' productivity potential through smart irrigation. Irri-Hub Ke is
+        <p style="font-family: Montserrat;font-size: 19px;color: rgba(0, 0, 0, 0.7);">Unlocking Africa's smallholder
+          farmers' productivity potential through smart irrigation. Irri-Hub Ke is
           dedicated to building a resilient farming community and equipping every farmer with the right tools to
           increase their yields and secure additional income. Join us in scaling climate action and revolutionizing
           farming for better yields.</p>
@@ -1159,8 +1157,10 @@
   <!-- Testimonials Section -->
   <section class="testimonials">
     <div class="testimonials-header">
-      <h2>Farmers across the country <span style="color: #85c340;">love our products</span></h2>
-      <p>Read some of our success stories to find out why we are the best fit for you</p>
+      <h2 style="font-size: 45px; font-weight: 800;font-family: Montserrat;">Farmers across the country <span
+          style="color: #85c340;">love our products</span></h2>
+      <p style="font-size: 21px;font-family: Montserrat;color: #000;">Read some of our success stories to find out why
+        we are the best fit for you</p>
     </div>
     <div class="testimonial-card">
       <img src="https://res.cloudinary.com/prometheusapi/image/upload/v1703852498/public/group-25_2x_r9ldxp.png"
@@ -1179,8 +1179,211 @@
       <span class="dot"></span>
     </div>
   </section>
+  <h2
+    style="text-align: center;font-size: 45px;font-weight: 800;font-family: Montserrat;text-align: center;padding: 35px 32px 25px;">
+    Our Value<span style="color: #85c340;"> Packs</span></h2>
+  <!-- Value Packs Carousel Section -->
+  <section class="value-packs-carousel">
+    <div id="valuePacksCarousel" class="carousel slide" data-ride="carousel">
+
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#valuePacksCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#valuePacksCarousel" data-slide-to="1"></li>
+      </ol>
+
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="carousel-background">
+            <img src="{% static 'images/4876542 2.png' %}" alt="Value Pack Background">
+            <!-- <img src="../static/images/4876542 2.png" alt="Value Pack Background"> -->
+          </div>
+          <div class="carousel-caption text-left">
+            <h3>Onion Value Pack</h3>
+            <p>Onion Doc and Irri-Hub Ke have partnered <br> to offer a holistic approach to onion farming, <br>
+              empowering farmers for a successful harvest.</p>
+            <a class="btn btn-primary" href="#">Learn More</a>
+          </div>
+        </div>
+        <!-- Additional carousel items... -->
+        <div class="carousel-item">
+          <div class="carousel-background">
+            <img src="{% static 'images/4876542 3.png' %}" alt="Value Pack Background">
+            <!-- <img src="../static/images/4876542 3.png" alt="Value Pack Background"> -->
+          </div>
+          <div class="carousel-caption text-left">
+            <h3>Avocado Value Pack</h3>
+            <p>Irri-Hub Ke have partnered <br> to offer a holistic approach to avocado farming, <br> empowering farmers
+              for a successful harvest.</p>
+            <a class="btn btn-primary" href="/value_pack_avocado">Learn More</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Controls -->
+      <a class="carousel-control-prev" href="#valuePacksCarousel" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#valuePacksCarousel" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </section>
+  <style>
+    .value-packs-carousel .carousel-background img {
+      width: 100%;
+      height: auto;
+    }
+
+    .value-packs-carousel .carousel-caption {
+      left: 15%;
+      right: 15%;
+      bottom: 20%;
+    }
+
+    .value-packs-carousel .carousel-caption h3 {
+      color: #fff;
+      font-weight: bold;
+    }
+
+    .value-packs-carousel .carousel-caption p {
+      color: #fff;
+    }
+
+    .value-packs-carousel .btn-primary {
+      background-color: #85c340;
+      border-color: #85c340;
+    }
+
+    .value-packs-carousel .carousel-control-prev-icon,
+    .value-packs-carousel .carousel-control-next-icon {
+      filter: invert(100%);
+    }
+
+    /* Adjustments for mobile responsiveness */
+    @media (max-width: 768px) {
+      .value-packs-carousel .carousel-caption {
+        left: 5%;
+        right: 5%;
+        bottom: 15%;
+        text-align: center;
+        /* Center align the text for mobile */
+      }
+
+      .value-packs-carousel .carousel-caption h3 {
+        font-size: 1.5rem;
+        /* Increase font size for heading */
+      }
+
+      .value-packs-carousel .carousel-caption p {
+        font-size: 1rem;
+        /* Increase font size for paragraph */
+      }
+
+      /* .value-packs-carousel .carousel {
+        height: 100vh;
+        Adjust the height of the carousel on mobile
+      } */
+
+      .value-packs-carousel .carousel-control-prev-icon,
+      .value-packs-carousel .carousel-control-next-icon {
+        width: 4%;
+        /* Adjust icon size if necessary */
+      }
+
+      .value-packs-carousel .carousel-background img {
+        height: 50vh;
+        /* Adjust the image height to fill the carousel */
+        object-fit: cover;
+        /* Ensure the image covers the area properly */
+      }
+    }
+  </style>
+  <script>
+    $('#valuePacksCarousel').carousel({
+      interval: 5000 
+    })
+  </script>
   <section class="gallery">
-    <h2>Our Amazing <span style="color: #85c340;">Gallery</span></h2>
+    <h2
+      style="text-align: center;font-size: 45px;font-weight: 800;font-family: Montserrat;text-align: center;padding-top: 10px; padding-bottom: 30px;">
+      Our Amazing <span style="color: #85c340;">Gallery</span></h2>
+
+
+    <style>
+      @media (max-width: 767.98px) {
+        .gallery-grid {
+          display: none;
+          /* Hide the grid on small devices */
+        }
+        .gallery { 
+          padding: 80px 32px 0px;
+          background-color: #fff;
+        }
+      }
+
+      @media (min-width: 768px) {
+        #mobileGalleryCarousel {
+          display: none;
+          /* Hide the carousel on medium and larger devices */
+        }
+      }
+
+      /* General styles for the carousel */
+      #mobileGalleryCarousel {
+        width: 100vw;
+        /* Full width of the viewport */
+        height: 50vh;
+        /* Responsive height based on viewport height */
+        margin-left: calc(-50vw + 50%);
+        /* Center the carousel */
+        position: relative;
+        margin-bottom: 8rem;
+        /* Needed for the negative margin to work */
+      }
+
+      /* Carousel images */
+      #mobileGalleryCarousel .carousel-inner .carousel-item img {
+        width: 100%;
+        height: 50vh;
+        /* Maintain consistent height */
+        object-fit: cover;
+        /* Cover the area of the item, cropping the image if necessary */
+        padding: 2rem;
+        border-radius: 10%;
+      }
+
+      /* Carousel inner padding adjustment */
+      #mobileGalleryCarousel .carousel-inner {
+        padding: 0 5px;
+        /* Adjust the padding to create a small margin on the sides */
+      }
+
+      /* Ensure the arrows are visible and appropriately positioned */
+      #mobileGalleryCarousel .carousel-control-prev,
+      #mobileGalleryCarousel .carousel-control-next {
+        width: 5%;
+        /* Control width */
+      }
+
+      @media (max-width: 767.98px) {
+
+        /* Adjust the left margin for mobile devices */
+        #mobileGalleryCarousel {
+          margin-left: 0;
+          /* Remove the negative margin on small devices */
+        }
+      }
+    </style>
+    <script>
+      $(document).ready(function () {
+        $('#mobileGalleryCarousel').carousel();
+      });
+    </script>
+
     <div class="gallery-grid">
       <div class="gallery-item large"><img
           src="https://res.cloudinary.com/prometheusapi/image/upload/v1703874760/public/Rectangle_15_sik5ty.png"
@@ -1197,20 +1400,35 @@
       <div class="gallery-item"><img
           src="https://res.cloudinary.com/prometheusapi/image/upload/v1703852505/public/37944-1_2x_g0mrmx.png"
           alt="Gallery Image"></div>
-      <div class="gallery-item"><img
-          src="https://res.cloudinary.com/prometheusapi/image/upload/v1703852502/public/rectangle-16_2x_m5uf69.png"
-          alt="Gallery Image"></div>
-      <div class="gallery-item"><img
-          src="https://res.cloudinary.com/prometheusapi/image/upload/v1703852505/public/37944-1_2x_g0mrmx.png"
-          alt="Gallery Image"></div>
-      <div class="gallery-item"><img
-          src="https://res.cloudinary.com/prometheusapi/image/upload/v1703852502/public/rectangle-16_2x_m5uf69.png"
-          alt="Gallery Image"></div>
-      <div class="gallery-item"><img
-          src="https://res.cloudinary.com/prometheusapi/image/upload/v1703852505/public/37944-1_2x_g0mrmx.png"
-          alt="Gallery Image"></div>
     </div>
   </section>
+  <!-- Bootstrap Carousel (visible on mobile only) -->
+  <div id="mobileGalleryCarousel" class="carousel slide d-md-none" data-ride="carousel">
+    <div class="carousel-inner">
+      <!-- Insert carousel items here -->
+      <!-- Example: -->
+      <div class="carousel-item active">
+        <img class="d-block w-100"
+          src="https://res.cloudinary.com/prometheusapi/image/upload/v1703874760/public/Rectangle_15_sik5ty.png"
+          alt="First slide">
+      </div>
+      <!-- Repeat for each image -->
+      <div class="carousel-item">
+        <img class="d-block w-100"
+          src="https://res.cloudinary.com/prometheusapi/image/upload/v1703874759/public/Rectangle_15_1_tjjuww.png"
+          alt="Second slide">
+      </div>
+    </div>
+
+    <a class="carousel-control-prev" href="#mobileGalleryCarousel" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#mobileGalleryCarousel" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
   <div class="contact-container"
     style="background-image: url('https://res.cloudinary.com/prometheusapi/image/upload/v1703876537/public/37944_1_kzch9t.png');">
     <aside class="contact-info">
@@ -1264,7 +1482,8 @@
   <footer class="footer">
     <section class="footer_1">
       <div class="footer_1_section footer_1_section1">
-        <img src="images/logo_colored.png" alt="" />
+        <img src="{% static 'images/logo_colored.png' %}" alt="" />
+        <!-- <img src="../static/images/logo_colored.png" alt="" /> -->
         <div>
           <p class="footer_heading">Get in touch</p>
           <p class="footer_text">
@@ -1294,16 +1513,31 @@
           <li>Greenhouses</li>
         </ul>
       </div>
+      <style>
+        @media (max-width: 768px) {
+          .footer_1_section2 {
+            display: none;
+          }
+        }
+      </style>
     </section>
     <section class="footer_2">
       <p>2023 &copy All rights reserved by <span>Irri-hub Ke</span></p>
       <div>
-        <img src="images/Twitter_Circled.png" alt="" />
-        <img src="images/Instagram_Circle.png" alt="" />
-        <img src="images/Facebook.png" alt="" />
+        <img src="{% static 'images/Twitter_Circled.png' %}" alt="" />
+        <img src="{% static 'images/Instagram_Circle.png' %}" alt="" />
+        <img src="{% static 'images/Facebook.png' %}" alt="" />
+        <!-- <img src="../static/images/Twitter_Circled.png" alt="" />
+        <img src="../static/images/Instagram_Circle.png" alt="" />
+        <img src="../static/images/Facebook.png" alt="" /> -->
       </div>
     </section>
   </footer>
+  <!-- Include this before your closing tag -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
   <script>
     function toggleSidebar() {
       var sidebar = document.querySelector(".sidebar");
