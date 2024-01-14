@@ -136,13 +136,13 @@
             Fill in the form below to kick start your farming journey
           </p>
           <!--show errors during signup-->
-          <!-- {% if message %}
+          {% if message %}
                 <div class="alert alert-danger" role="alert">
                     {{ message }}
-                </div> -->
-          <!-- {% endif %} -->
+                </div>
+          {% endif %}
           <form class="space-y-4" method="post">
-            <!-- {% csrf_token %} -->
+            {% csrf_token %}
             <div class="flex space-x-4">
               <div class="relative flex w-full">
                 <i
